@@ -1,21 +1,26 @@
+import React from "react";
+import MainCard from "./MainCard";
+import Location from "./Location"
 
 
 const MainLocationList = (props) => {
 
 
     return (
-        <Card className="users">
+        <MainCard className="users">
             {/* <ul> */}
-                {props.users.map((user) => (
+                {props.locations.map((location) => (
                     <User
-                        key={user.id}
-                        img={user.img}
-                        name={user.name}
-                        age={user.age}
-                        major={user.major}
+                        key={location.id}
+                        img={location.img}
+                        title={location.title}
+                        date={location.date}
+                        comment={location.comment}
                     />
                 ))};
             {/* </ul> */}
-        </Card>
+        </MainCard>
     )
 }
+
+export default MainLocationList;

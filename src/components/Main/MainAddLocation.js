@@ -5,7 +5,7 @@ import './MainCard.css';
 import './MainAddLocation.css';
 
 const MainAddLocation = (props) => {
-
+    
     return (
         <Card className="two-column">
             <div className="one-col">
