@@ -24,16 +24,16 @@ const Hdr = () => {
         <div>
             <div className="hdr">
             <Link 
-            to='/login'
-            >Login</Link>
-            <Link 
             to='/add'
             >Add</Link>
             <Link 
             to='/edit'
             >Edit</Link>
-                <h1>Welcome, Dani Davito Mark Grigsby Strazzerri the Third, of 
-                    diabeto the ninth!</h1>
+            <h1>Welcome, User!</h1>
+            <img src="src\components\Main\img\Toilet logo picture.jpg" alt="JOE BIDEN"></img>
+                    <Link 
+            to='/login'
+            >Login</Link>
             </div>
             <MainLocationList locations={locationsList}/>
         </div>
