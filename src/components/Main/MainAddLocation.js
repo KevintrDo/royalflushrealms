@@ -2,14 +2,18 @@ import React from "react";
 
 import Card from "./MainCard";
 import './MainCard.css';
-import './MainAddUser.css';
+import './MainAddLocation.css';
 
-const MainAddUser = () => {
+const MainAddLocation = () => {
     return (
-        <Card className="input">
+        <Card className="two-column">
             <div className="one-col">
-                <div className="card">
-                    <h1>HUH</h1>
+                <div className="card-2-column">
+                    <div>
+                        WWEEWEW
+                    </div>
+                    <h1>cringe</h1>
+                    <h1>woow</h1>
                 </div>
             </div>
             <div className="one-col">
@@ -21,4 +25,4 @@ const MainAddUser = () => {
     );
 };
 
-export default MainAddUser;
+export default MainAddLocation;

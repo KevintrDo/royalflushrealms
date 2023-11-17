@@ -2,13 +2,14 @@ import React,  { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Hdr from './components/Main/MainHdr';
-import MainAddUser from './components/Main/MainAddUser';
+import MainAddLocation from './components/Main/MainAddLocation';
 
 function App() {
   return (
     <div>
+      
       <Hdr/>
-      <MainAddUser/>
+      <MainAddLocation/>
     </div>
   );
 }

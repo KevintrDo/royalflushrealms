@@ -1,4 +1,4 @@
-.input {
+.two-column {
     display: grid;
     grid-template-columns: 1fr 1fr;
     padding: 4% 10% 10% 10%;
@@ -9,6 +9,7 @@
     display:grid;
     grid-template-columns: 1fr;
     padding: 4% 10% 10% 10%;
+    overflow-y:auto
 }
 
   .card {
@@ -17,4 +18,9 @@
     border-radius: 20px;
     box-shadow: 9px 10px 8px 5px rgb(88, 88, 88);
     margin: 0 auto;
+}
+
+.two-column .one-col .card-2-column {
+  display: flex;
+  flex-shrink: 1;
 }
