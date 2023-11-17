@@ -26,6 +26,12 @@ const Hdr = () => {
             <Link 
             to='/login'
             >Login</Link>
+            <Link 
+            to='/add'
+            >Add</Link>
+            <Link 
+            to='/edit'
+            >Edit</Link>
                 <h1>Welcome, Dani Davito Mark Grigsby Strazzerri the Third, of 
                     diabeto the ninth!</h1>
             </div>
