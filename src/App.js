@@ -1,25 +1,36 @@
+import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
 import React,  { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Hdr from './components/Main/MainHdr';
+import MainLocationList from './components/Main/MainLocationList';
+import LoginCard from './components/Login/LoginCard';
+import FormAdd from './components/Form/FormAdd'
+import FormEdit from './components/Form/FormEdit'
+import Login from './components/Login/Login'
+import LoginCreate from './components/Login/LoginCreate'
+
 
 function App() {
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div>
+        <Routes>
+          <Route exact path='/' element={<Hdr/>} />
+          <Route path='/login' element={<Login/>} />
+          <Route path='/logout' element={<Login/>} />
+          <Route path='/signup' element={<LoginCreate/>} />
+          <Route path='/edit' element={<FormEdit/>} />
+          <Route path='/add' element={<FormAdd/>} />
+          <Route path='/home' element={<Hdr/>} />
+          {/* <Hdr/>
+          <LoginCard/>
+          <MainLocationList locations={locationsList}/> */}
+        </Routes>
+      </div>
+    </Router>
+    
   );
 }
 
