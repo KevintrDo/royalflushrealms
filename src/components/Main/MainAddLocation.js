@@ -4,7 +4,8 @@ import Card from "./MainCard";
 import './MainCard.css';
 import './MainAddLocation.css';
 
-const MainAddLocation = () => {
+const MainAddLocation = (props) => {
+
     return (
         <Card className="two-column">
             <div className="one-col">
