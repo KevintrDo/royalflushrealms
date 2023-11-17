@@ -1,6 +1,7 @@
 import React from "react";
 import MainCard from "./MainCard";
-import Location from "./Location"
+import Location from "./Location";
+import './MainLocationList.css';
 
 
 const MainLocationList = (props) => {
@@ -10,7 +11,7 @@ const MainLocationList = (props) => {
         <MainCard className="users">
             {/* <ul> */}
                 {props.locations.map((location) => (
-                    <User
+                    <Location
                         key={location.id}
                         img={location.img}
                         title={location.title}

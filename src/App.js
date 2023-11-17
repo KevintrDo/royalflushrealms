@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import Hdr from './components/Main/MainHdr';
 import MainAddLocation from './components/Main/MainAddLocation';
+import MainLocationList from './components/Main/MainLocationList';
 
 function App() {
 
@@ -26,7 +27,7 @@ function App() {
     <div>
       
       <Hdr/>
-      <MainAddLocation onAddLocation={addLocationHandler}/>
+      {/* <MainAddLocation onAddLocation={addLocationHandler}/> */}
       <MainLocationList locations={locationsList}/>
     </div>
   );
