@@ -9,7 +9,7 @@ const MainLocationList = (props) => {
 
     return (
         <MainCard className="users">
-            {/* <ul> */}
+            <ul>
                 {props.locations.map((location) => (
                     <Location
                         key={location.id}
@@ -18,8 +18,8 @@ const MainLocationList = (props) => {
                         date={location.date}
                         comment={location.comment}
                     />
-                ))};
-            {/* </ul> */}
+                ))}
+            </ul>
         </MainCard>
     )
 }
