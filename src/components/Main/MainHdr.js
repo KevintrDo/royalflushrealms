@@ -50,6 +50,7 @@ const Hdr = () => {
             >Login</Link>
             </div>
             <MainLocationList locations={locationsList}/>
+            
         </div>
     );
 };

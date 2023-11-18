@@ -7,6 +7,10 @@ import MainButtonEdit from './MainButtonEdit';
 
 const Location = (props) => {
 
+    const handleEditButtonClick = () => {
+        props.handleEditButton(props.id, props.title, props.date, props.img, props.comment);
+      };
+    
 
     return (
         <MainCard>
@@ -24,7 +28,7 @@ const Location = (props) => {
                     <MainButtonFavorite type="submit" onClick= {() => props.handleFavoriteButton(props.id)}>
                         Favorite
                     </MainButtonFavorite>
-                    <MainButtonEdit type="submit>">Edit</MainButtonEdit>
+                    <MainButtonEdit type="submit" onClick={handleEditButtonClick}>Edit</MainButtonEdit>
                 </div>
             </ul>
         </MainCard>

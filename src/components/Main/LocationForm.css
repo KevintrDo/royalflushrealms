@@ -1,0 +1,46 @@
+.model-container {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  
+  .model {
+    border-radius: 5px;
+    padding: 2rem;
+    background-color: rgb(123, 159, 168);
+    width: 30em;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1rem;
+    
+  }
+  
+  .form-group input,
+  .form-group textarea,
+  .form-group select {
+    border: 2px solid black;
+    border-radius: 0.4rem;
+    padding: 0.5rem;
+    font-size: 1rem;
+  }
+
+  
+  
+  
+  .form-group label {
+    margin-bottom: 0.2rem;
+  }
+  
+  
