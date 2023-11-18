@@ -33,7 +33,9 @@ const FormAdd = () => {
     return (
         <div>
         <div className="hdr">
-            <button></button>
+            <button className="home">
+            <Link to='/home'>Home</Link>
+            </button>
             <h1>Add Bathroom</h1>
             </div>
             <div>
