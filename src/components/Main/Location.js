@@ -4,6 +4,7 @@ import './Location.css';
 import MainCard from './MainCard';
 import MainButtonFavorite from './MainButtonFavorite';
 import MainButtonEdit from './MainButtonEdit';
+import MainButtonDelete from './MainButtonDelete';
 
 const Location = (props) => {
 
@@ -25,6 +26,7 @@ const Location = (props) => {
                         Favorite
                     </MainButtonFavorite>
                     <MainButtonEdit type="submit>">Edit</MainButtonEdit>
+                    <MainButtonDelete type="submit" onClick= {() => props.handleLeftDelete(props.id)}>Delete</MainButtonDelete>
                 </div>
             </ul>
         </MainCard>

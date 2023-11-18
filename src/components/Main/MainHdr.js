@@ -1,11 +1,15 @@
-import MainLocationList from "./MainLocationList";
 import React,  { useState } from 'react';
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom';
+import myImage from './img/Toilet logo picture.jpg'; // Adjust the path to your image
+import './MainHdr.css'; // Import your CSS file
+import MainLocationList from './MainLocationList';
 
-import './MainHdr.css';
-
-const Hdr = () => {
-    const DUMMY_LOCATION = [
+const MainHdr = () => {
+      const handleClick = () => {
+        
+      };
+    
+      const DUMMY_LOCATION = [
         {
         id: 'poopy',
         title: 'Daniel Grigsby',
@@ -34,24 +38,28 @@ const Hdr = () => {
           return [user, ...prevUsers];
         });
       };
-    return (
-        <div>
-            <div className="hdr">
-            <Link 
-            to='/add'
-            >Add</Link>
-            <Link 
-            to='/edit'
-            >Edit</Link>
-            <h1>Welcome, User!</h1>
-            <img src="src\components\Main\img\Toilet logo picture.jpg" alt="JOE BIDEN"></img>
-                    <Link 
-            to='/login'
-            >Login</Link>
-            </div>
-            <MainLocationList locations={locationsList}/>
+  return (
+    <div>
+      <div className="hdr">
+        <div className="nav-links">
+        <Link to="/add">
+        <button className="my-button" onClick={handleClick}>
+          
+            ADD
+          </button>
+          </Link>
         </div>
-    );
+        <div className="user-info">
+          <h1>Welcome, User! <img className="" src={myImage} alt="JOE BIDEN" /></h1>
+          <div>
+            <p>Your Domain is your conquer!</p>
+          </div>
+        </div>
+        <Link to="/login" className="link-style">Login</Link>
+      </div>
+      <MainLocationList locations={locationsList}/>
+    </div>
+  );
 };
 
-export default Hdr;
+export default MainHdr;

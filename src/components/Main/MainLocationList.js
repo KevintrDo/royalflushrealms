@@ -17,6 +17,22 @@ var MainLocationList = (props) => {
         }
     };
 
+    const handleLeftDelete = (itemID) => {
+        const itemToMove = leftColumnItems.find((item) => item.id === itemID);
+        if (itemToMove) {
+            const updatedLeftColumnItems = leftColumnItems.filter((item) => item.id !== itemID);
+            setLeftColumnItems(updatedLeftColumnItems);
+        }
+    }
+
+    const handleRightDelete = (itemID) => {
+        const itemToMove = rightColumnItem.find((item) => item.id === itemID);
+        if (itemToMove) {
+            const updatedRightColumnItems = rightColumnItem.filter((item) => item.id !== itemID);
+            setRightColumnItem(updatedRightColumnItems);
+        }
+    }
+
     const handleUnfavoriteButton = (itemID) => {
         const itemToMove = rightColumnItem.find((item) => item.id === itemID);
         if (itemToMove) {
@@ -37,6 +53,7 @@ var MainLocationList = (props) => {
                         date={location.date}
                         comment={location.comment}
                         handleFavoriteButton={() => handleFavoriteButton(location.id)} // Pass the correct itemID
+                        handleLeftDelete={() => handleLeftDelete(location.id)}
                     />
                 ))}
             </ul>
@@ -49,6 +66,7 @@ var MainLocationList = (props) => {
                         date={location.date}
                         comment={location.comment}
                         handleUnfavoriteButton={() => handleUnfavoriteButton(location.id)}
+                        handleRightDelete={() => handleRightDelete(location.id)}
                     />
                 ))}
             </ul>
