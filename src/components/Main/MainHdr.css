@@ -8,7 +8,17 @@
     font-family: 'Arial', sans-serif; 
     line-height: 1.5; 
     transition: background-color 0.3s, color 0.3s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
+
+
+.hdr a {
+    margin: 0 10px;
+    color: pink;
+}
+
 .hdr h1 {
     margin: 0 auto;
     color: #F1F445;

@@ -1,0 +1,24 @@
+.buttonDelete {
+    font: inherit;
+    border: 1px solid #0a0a0a;
+    background: rgb(163, 40, 10);
+    color: rgb(248, 186, 186);
+    padding: 0.25rem 1rem;
+    cursor: pointer;
+    font-family: 'Yanone Kaffeesatz';
+    font-weight: 700;
+    font-size: 2em;
+    height: 120px;
+  }
+  
+  .buttonDelete:hover,
+  .buttonDelete:active {
+    transition: background-color 0.5s;
+    background: #9bc8e0;
+    border-color: #9dc9e2;
+  }
+  
+  .buttonDelete:focus {
+    outline: none;
+  }
+  

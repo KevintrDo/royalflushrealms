@@ -4,9 +4,9 @@ import './Location.css';
 import MainCard from './MainCard';
 import MainButtonFavorite from './MainButtonFavorite';
 import MainButtonEdit from './MainButtonEdit';
+import MainButtonDelete from './MainButtonDelete';
 
-const Location = (props) => {
-
+const LocationFav = (props) => {
 
     return (
         <MainCard>
@@ -21,14 +21,15 @@ const Location = (props) => {
                     </div>
                 </div>
                 <div className='button-flex'>
-                    <MainButtonFavorite type="submit" onClick= {() => props.handleFavoriteButton(props.id)}>
-                        Favorite
+                    <MainButtonFavorite type="submit" className="favorite" onClick= {() => props.handleUnfavoriteButton(props.id)}>
+                        Unfavorite
                     </MainButtonFavorite>
-                    <MainButtonEdit type="submit>">Edit</MainButtonEdit>
+                    <MainButtonEdit type="submit">Edit</MainButtonEdit>
+                    <MainButtonDelete type="submit">Delete</MainButtonDelete>
                 </div>
             </ul>
         </MainCard>
     )
 }
 
-export default Location
+export default LocationFav;

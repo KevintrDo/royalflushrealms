@@ -1,0 +1,24 @@
+.buttonFav {
+    font: inherit;
+    border: 1px solid #0a0a0a;
+    background: #c79029;
+    color: rgb(247, 184, 184);
+    padding: 0.25rem 1rem;
+    cursor: pointer;
+    font-family: 'Yanone Kaffeesatz';
+    font-weight: 700;
+    font-size: 2em;
+    height: 120px;
+  }
+  
+  .buttonFav:hover,
+  .buttonFav:active {
+    transition: background-color 0.5s;
+    background: #ffe8bc;
+    border-color: #0a0a0a;
+  }
+  
+  .buttonFav:focus {
+    outline: none;
+  }
+  
