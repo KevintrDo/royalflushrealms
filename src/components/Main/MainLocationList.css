@@ -1,14 +1,19 @@
 .users {
     margin: 2rem auto;
-    width: 90%;
-    max-width: 40rem;
+    width: 95%;
     display: grid;
     grid-template-columns: 1fr 1fr;
+    background-color: #b0a1a1;
+    border-radius: 20px;
+    box-shadow: 9px 10px 8px 5px rgb(88, 88, 88);
+    max-height: 800px;
+    overflow-y: auto;
   }
   
   .users ul {
     list-style: none;
     padding: 1rem;
+    margin-bottom: 50px;
   }
   
   .users li {

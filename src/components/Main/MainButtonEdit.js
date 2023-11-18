@@ -2,7 +2,7 @@ import React from 'react';
 
 import './MainButtonFavorite';
 
-const MainButtonFavorite = (props) => {
+const MainButtonEdit = (props) => {
   return (
     <button
       className="button"
@@ -14,4 +14,4 @@ const MainButtonFavorite = (props) => {
   );
 };
 
-export default MainButtonFavorite;
+export default MainButtonEdit;
