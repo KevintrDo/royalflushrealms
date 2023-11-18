@@ -1,12 +1,12 @@
 import React from 'react';
 
-import './MainButtonFavorite';
+import './MainButtonFavorite.css';
 
 const MainButtonFavorite = (props) => {
   return (
     <button
-      className="button"
-      type={props.type || 'button'}
+      className="buttonFav"
+      type={props.type || 'buttonFav'}
       onClick={props.onClick}
     >
       {props.children}

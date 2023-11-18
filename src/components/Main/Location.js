@@ -20,8 +20,10 @@ const Location = (props) => {
                         <p className='userComment'>{props.comment}</p>
                     </div>
                 </div>
-                <div>
-                    <MainButtonFavorite type="submit" onClick= {() => props.handleFavoriteButton(props.id)}>Favorite</MainButtonFavorite>
+                <div className='button-flex'>
+                    <MainButtonFavorite type="submit" onClick= {() => props.handleFavoriteButton(props.id)}>
+                        Favorite
+                    </MainButtonFavorite>
                     <MainButtonEdit type="submit>">Edit</MainButtonEdit>
                 </div>
             </ul>

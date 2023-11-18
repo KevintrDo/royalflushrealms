@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import MainCard from "./MainCard";
 import Location from "./Location";
 import './MainLocationList.css';
-import MainButtonEdit from "./MainButtonEdit";
-import MainButtonFavorite from "./MainButtonFavorite";
+import LocationFav from "./LocationFav";
 
 var MainLocationList = (props) => {
     const [leftColumnItems, setLeftColumnItems] = useState(props.locations);
@@ -15,6 +14,15 @@ var MainLocationList = (props) => {
             const updatedLeftColumnItems = leftColumnItems.filter((item) => item.id !== itemID);
             setLeftColumnItems(updatedLeftColumnItems);
             setRightColumnItem([...rightColumnItem, itemToMove]);
+        }
+    };
+
+    const handleUnfavoriteButton = (itemID) => {
+        const itemToMove = rightColumnItem.find((item) => item.id === itemID);
+        if (itemToMove) {
+            const updatedRightColumnItems = rightColumnItem.filter((item) => item.id !== itemID);
+            setLeftColumnItems([...leftColumnItems, itemToMove]);
+            setRightColumnItem(updatedRightColumnItems)
         }
     };
 
@@ -34,12 +42,13 @@ var MainLocationList = (props) => {
             </ul>
             <ul>
                 {rightColumnItem.map((location) => (
-                    <Location
+                    <LocationFav
                         key={location.id}
                         img={location.img}
                         title={location.title}
                         date={location.date}
                         comment={location.comment}
+                        handleUnfavoriteButton={() => handleUnfavoriteButton(location.id)}
                     />
                 ))}
             </ul>

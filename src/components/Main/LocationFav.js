@@ -1,10 +1,10 @@
 import React from 'react';
 import './Location.css';
-import {useState} from 'react';
 
 import MainCard from './MainCard';
 import MainButtonFavorite from './MainButtonFavorite';
 import MainButtonEdit from './MainButtonEdit';
+import MainButtonDelete from './MainButtonDelete';
 
 const LocationFav = (props) => {
 
@@ -16,12 +16,16 @@ const LocationFav = (props) => {
                         <h1>Date: {props.date}</h1>
                         <img src={props.img} className="location-img" alt={props.title}/>
                     <div>
-                        <h1>Comment: {props.comment}</h1>
+                        <h1 className='comment'>Comment:</h1>
+                        <p className='userComment'>{props.comment}</p>
                     </div>
                 </div>
-                <div>
-                    <MainButtonFavorite type="submit" onClick= {() => props.handleFavoriteButton(props.id)}>Favorite</MainButtonFavorite>
-                    <MainButtonEdit type="submit>">Edit</MainButtonEdit>
+                <div className='button-flex'>
+                    <MainButtonFavorite type="submit" className="favorite" onClick= {() => props.handleUnfavoriteButton(props.id)}>
+                        Unfavorite
+                    </MainButtonFavorite>
+                    <MainButtonEdit type="submit">Edit</MainButtonEdit>
+                    <MainButtonDelete type="submit">Delete</MainButtonDelete>
                 </div>
             </ul>
         </MainCard>

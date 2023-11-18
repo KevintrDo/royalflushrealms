@@ -16,11 +16,11 @@
   flex-direction: row;
   flex-shrink: 1;
   justify-content: space-around;
+  
  }
 
 .four-col-grid {
     display: grid;
-
 }
 
 .location-img {
@@ -43,6 +43,15 @@
     margin-top: 0px;
   }
 
-  .button-grid {
+  .button-flex {
+    display:flex;
+    flex-direction: column;
+    margin-left: 0px;
+    margin-right: 0px;
+    justify-content: center;
+    justify-content: space-evenly;
+  }
 
+  .favorite {
+    margin-bottom: 50px;
   }

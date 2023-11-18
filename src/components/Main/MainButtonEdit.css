@@ -1,19 +1,23 @@
-.button {
-    font: inherit;
-    border: 1px solid #4f005f;
-    background: #4f005f;
-    color: white;
-    padding: 0.25rem 1rem;
-    cursor: pointer;
-  }
-  
-  .button:hover,
-  .button:active {
-    background: #791188;
-    border-color: #741188;
-  }
-  
-  .button:focus {
-    outline: none;
-  }
-  
+.buttonEdit {
+  font: inherit;
+  border: 1px solid #0a0a0a;
+  background: #385f75;
+  color: rgb(247, 184, 184);
+  padding: 0.25rem 1rem;
+  cursor: pointer;
+  font-family: 'Yanone Kaffeesatz';
+  font-weight: 700;
+  font-size: 2em;
+  height: 120px;
+}
+
+.buttonEdit:hover,
+.buttonEdit:active {
+  transition: background-color 0.5s;
+  background: #9bc8e0;
+  border-color: #9dc9e2;
+}
+
+.buttonEdit:focus {
+  outline: none;
+}

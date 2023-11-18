@@ -1,12 +1,12 @@
 import React from 'react';
 
-import './MainButtonFavorite';
+import './MainButtonDelete.css';
 
 const MainButtonDelete = (props) => {
   return (
     <button
-      className="button"
-      type={props.type || 'button'}
+      className="buttonDelete"
+      type={props.type || 'buttonDelete'}
       onClick={props.onClick}
     >
       {props.children}
