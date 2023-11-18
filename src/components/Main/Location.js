@@ -22,11 +22,18 @@ const Location = (props) => {
                     </div>
                 </div>
                 <div className='button-flex'>
+                    {props.isLoggedIn &&
                     <MainButtonFavorite type="submit" onClick= {() => props.handleFavoriteButton(props.id)}>
                         Favorite
                     </MainButtonFavorite>
+                    }
+                    {props.isLoggedIn &&
                     <MainButtonEdit type="submit>">Edit</MainButtonEdit>
-                    <MainButtonDelete type="submit" onClick= {() => props.handleLeftDelete(props.id)}>Delete</MainButtonDelete>
+                    }   
+                    {console.log(props.isLoggedIn)}    
+                    {props.isLoggedIn &&
+                    <MainButtonDelete stype="submit" onClick= {() => props.handleLeftDelete(props.id)}>Delete</MainButtonDelete>
+                    }
                 </div>
             </ul>
         </MainCard>

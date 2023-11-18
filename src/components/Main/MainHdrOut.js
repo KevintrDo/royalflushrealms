@@ -1,12 +1,12 @@
 import React,  { useState } from 'react';
 import { Link } from 'react-router-dom';
 import myImage from './img/Toilet logo picture.jpg'; // Adjust the path to your image
-import './MainHdr.css'; // Import your CSS file
+import './MainHdrOut.css'; // Import your CSS file
 import MainLocationList from './MainLocationList';
 import { useLocation } from 'react-router-dom';
 
 
-const MainHdr = () => {
+const MainHdrOut = () => {
     
       const DUMMY_LOCATION = [
         {
@@ -31,11 +31,7 @@ const MainHdr = () => {
           comment: 'Chaos'
         }
       ];
-      
-      var isLogged = true;
-      // if(receivedValuealue != null) {
-      //     isLogged = receivedValue;
-      // }
+      var isLogged = false;
       const [locationsList, setUsers] = useState(DUMMY_LOCATION);
       const addLocationHandler = (user) => {
         setUsers((prevUsers) => {
@@ -59,13 +55,12 @@ const MainHdr = () => {
             <p>Your Domain is your conquer!</p>
           </div>
         </div>
-        <Link to='/' 
-        className="link-style">Logout</Link>
+        <Link to="/login" className="link-style">Login</Link>
 
       </div>
-      <MainLocationList loggedIn={true} locations={locationsList}/>
+      <MainLocationList loggedIn={false} locations={locationsList}/>
     </div>
   );
 };
 
-export default MainHdr;
+export default MainHdrOut;

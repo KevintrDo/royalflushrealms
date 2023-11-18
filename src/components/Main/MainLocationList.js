@@ -8,6 +8,7 @@ var MainLocationList = (props) => {
     const [leftColumnItems, setLeftColumnItems] = useState(props.locations);
     const [rightColumnItem, setRightColumnItem] = useState([]);
 
+
     const handleFavoriteButton = (itemID) => {
         const itemToMove = leftColumnItems.find((item) => item.id === itemID);
         if (itemToMove) {
@@ -42,18 +43,23 @@ var MainLocationList = (props) => {
         }
     };
 
+    
+
+
     return (
         <MainCard className="users">
             <ul>
                 {leftColumnItems.map((location) => (
                     <Location
                         key={location.id}
+                        {...console.log(location.id)}
                         img={location.img}
                         title={location.title}
                         date={location.date}
                         comment={location.comment}
                         handleFavoriteButton={() => handleFavoriteButton(location.id)} // Pass the correct itemID
                         handleLeftDelete={() => handleLeftDelete(location.id)}
+                        isLoggedIn={props.loggedIn}
                     />
                 ))}
             </ul>
