@@ -1,11 +1,9 @@
 import React from 'react';
 import './Location.css';
-import {useState} from 'react';
 
 import MainCard from './MainCard';
 import MainButtonFavorite from './MainButtonFavorite';
 import MainButtonEdit from './MainButtonEdit';
-import MainLocationList from './MainLocationList';
 
 const Location = (props) => {
 
@@ -18,7 +16,8 @@ const Location = (props) => {
                         <h1>Date: {props.date}</h1>
                         <img src={props.img} className="location-img" alt={props.title}/>
                     <div>
-                        <h1>Comment: {props.comment}</h1>
+                        <h1 className='comment'>Comment:</h1>
+                        <p className='userComment'>{props.comment}</p>
                     </div>
                 </div>
                 <div>

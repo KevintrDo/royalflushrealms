@@ -1,53 +1,51 @@
-import React, {Component} from "react";
+import React, { useState } from "react";
 import MainCard from "./MainCard";
 import Location from "./Location";
 import './MainLocationList.css';
-import {useState} from "react";
 import MainButtonEdit from "./MainButtonEdit";
 import MainButtonFavorite from "./MainButtonFavorite";
 
 var MainLocationList = (props) => {
+    const [leftColumnItems, setLeftColumnItems] = useState(props.locations);
+    const [rightColumnItem, setRightColumnItem] = useState([]);
 
     const handleFavoriteButton = (itemID) => {
         const itemToMove = leftColumnItems.find((item) => item.id === itemID);
         if (itemToMove) {
             const updatedLeftColumnItems = leftColumnItems.filter((item) => item.id !== itemID);
-    
-            setLeftColmumnItems(updatedLeftColumnItems);
-    
-            setRightColumnItem([...setRightColumnItem, itemToMove]);
+            setLeftColumnItems(updatedLeftColumnItems);
+            setRightColumnItem([...rightColumnItem, itemToMove]);
         }
     };
 
-    const[leftColumnItems, setLeftColmumnItems] = useState(
+    return (
+        <MainCard className="users">
             <ul>
-                {props.locations.map((location) => (
+                {leftColumnItems.map((location) => (
                     <Location
                         key={location.id}
                         img={location.img}
                         title={location.title}
                         date={location.date}
                         comment={location.comment}
-                        handleFavoriteButton={handleFavoriteButton}
+                        handleFavoriteButton={() => handleFavoriteButton(location.id)} // Pass the correct itemID
                     />
                 ))}
             </ul>
-        );
-
-    const[rightColumnItem, setRightColumnItem] = useState([])
-
-
-    return (
-        <mainCard className="users">
             <ul>
-                {leftColumnItems}
+                {rightColumnItem.map((location) => (
+                    <Location
+                        key={location.id}
+                        img={location.img}
+                        title={location.title}
+                        date={location.date}
+                        comment={location.comment}
+                    />
+                ))}
             </ul>
-            <ul>
-                {rightColumnItem}
-            </ul>
-        </mainCard>
-    )
-}
-
+        </MainCard>
+    );
+};
 
 export default MainLocationList;
+

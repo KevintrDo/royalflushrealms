@@ -1,5 +1,5 @@
 .users {
-    margin: 2rem auto;
+    margin: 1 auto;
     width: 95%;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -8,6 +8,7 @@
     box-shadow: 9px 10px 8px 5px rgb(88, 88, 88);
     max-height: 800px;
     overflow-y: auto;
+    width: "auto",
   }
   
   .users ul {
