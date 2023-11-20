@@ -29,7 +29,8 @@ const LocationFav = (props) => {
                         Unfavorite
                     </MainButtonFavorite>
                     <MainButtonEdit type="submit" onClick={handleEditButtonClickR}>Edit</MainButtonEdit>
-                    <MainButtonDelete type="submit">Delete</MainButtonDelete>
+                    <MainButtonDelete type="submit" onClick= {() => props.handleRightDelete(props.id)}>Delete</MainButtonDelete>
+
                 </div>
             </ul>
         </MainCard>

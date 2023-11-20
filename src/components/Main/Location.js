@@ -4,6 +4,7 @@ import './Location.css';
 import MainCard from './MainCard';
 import MainButtonFavorite from './MainButtonFavorite';
 import MainButtonEdit from './MainButtonEdit';
+import MainButtonDelete from './MainButtonDelete';
 
 const Location = (props) => {
 
@@ -24,10 +25,18 @@ const Location = (props) => {
                     </div>
                 </div>
                 <div className='button-flex'>
+                    {props.isLoggedIn &&
                     <MainButtonFavorite type="submit" onClick= {() => props.handleFavoriteButton(props.id)}>
                         Favorite
                     </MainButtonFavorite>
+                    }
+                    {props.isLoggedIn &&
                     <MainButtonEdit type="submit" onClick={handleEditButtonClick}>Edit</MainButtonEdit>
+                    }   
+                    {console.log(props.isLoggedIn)}    
+                    {props.isLoggedIn &&
+                    <MainButtonDelete stype="submit" onClick= {() => props.handleLeftDelete(props.id)}>Delete</MainButtonDelete>
+                    }
                 </div>
             </ul>
         </MainCard>
