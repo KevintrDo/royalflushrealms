@@ -25,15 +25,22 @@
     padding: 1rem;
     width: 90%;
     max-width: 40rem;
+    height: 400px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #b0a1a1;
+    justify-content: space-between;
 }
 
-label {
+.login label {
     display: block;
     font-weight: bold;
     margin-bottom: 0.5rem;
+    color: rgb(0, 0, 0);
 }
 
 .login input {

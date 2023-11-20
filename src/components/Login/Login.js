@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 
 import {Link} from 'react-router-dom'
 import { useHistory } from 'react-router-dom';
@@ -6,6 +6,25 @@ import { useHistory } from 'react-router-dom';
 import './Login.css';
 
 const Login = () => {
+    const [enteredUserName, setEnteredUsername] = useState('')
+    const [enteredPassword, setEnteredPassword] = useState('')
+
+      const submitHandler = (e) => {
+        e.preventDefault();
+        const userData = {
+            username: enteredUserName,
+            password: enteredPassword
+        };
+        console.log('form submitted', userData);
+        setEnteredPassword('');
+        setEnteredUsername('')
+    };
+    const UsernameChangeHandler = (event) => {
+        setEnteredUsername(event.target.value)
+    }
+    const PasswordChangeHandler = (event) => {
+        setEnteredPassword(event.target.value)
+    }
     return (
 
         <div>
@@ -13,25 +32,25 @@ const Login = () => {
                 <Link to='/'>Home</Link>
                 <h1>Login Page</h1>
             </div>
-            <div class='card login'>
-                <form>
-                    <label>Title</label>
+            <div class='login'>
+                <form onSubmit={submitHandler}>
+                    <label>Username</label>
                     <input
-                        id="title"
+                        id="username"
                         type="text"
+                        onChange={UsernameChangeHandler}
+                        value={enteredUserName}
                     />
-                    <label>Date</label>
+                    <label>Password</label>
                     <input
-                        id="date"
+                        id="password"
                         type="text"
+                        onChange={PasswordChangeHandler}
+                        value={enteredPassword}
                     />
-                    <label>Comment</label>
-                    <input
-                        id="comment"
-                        type="text"
-                    />
+                  
 
-                    <button class="buttonEdit" type="button">Login</button>
+                    <Link to='/home'><button class="buttonEdit" type="submit" >Login</button></Link>
                     <Link to='/signup'>Dont have an account? Sign up</Link>
                 </form>
             </div>

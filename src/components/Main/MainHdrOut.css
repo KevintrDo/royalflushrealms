@@ -1,4 +1,4 @@
-.hdr {
+.hdrOut {
     background-color: #333435;
     color: #fff;
     padding: 20px;
@@ -20,19 +20,20 @@
     color: pink;
   }
   
-  .user-info {
+  .user-infoOut {
   
     display:flex;
     flex-direction: column;
+    margin-left: 100px;
   }
   
-  .user-info h1 {
+  .user-infoOut h1 {
     margin: 0;
     color: #F1F445;
     margin-bottom: 5px;
   }
   
-  .user-info img {
+  .user-infoOut img {
     width: 5px;
     border-radius: 50%;
     margin-top: 5px;
@@ -47,7 +48,7 @@
     color: #fff;
   }
 
-  .hdr img {
+  .hdrOut img {
     width: 50px;
     border-radius: 50%;
     margin-top: 5px;
