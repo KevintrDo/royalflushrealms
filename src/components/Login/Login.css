@@ -1,20 +1,57 @@
 .hdr {
-    background-color: #333435; 
-    color: #fff; 
-    padding: 20px; 
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
-    text-align: center; 
-    font-size: 18px; 
-    font-family: 'Arial', sans-serif; 
-    line-height: 1.5; 
+    background-color: #333435;
+    color: #fff;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    font-size: 18px;
+    font-family: 'Arial', sans-serif;
+    line-height: 1.5;
     transition: background-color 0.3s, color 0.3s;
 }
+
 .hdr h1 {
     margin: 0 auto;
     color: #F1F445;
 }
 
 .hdr:hover {
-    background-color: #e74c3c; 
-    color: #fff; 
+    background-color: #e74c3c;
+    color: #fff;
+}
+
+.login {
+    margin: 2rem auto;
+    padding: 1rem;
+    width: 90%;
+    max-width: 40rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+.login input {
+    font: inherit;
+    display: block;
+    width: 100%;
+    border: 1px solid black;
+    padding: 0.15rem;
+    margin-bottom: 0.5rem;
+}
+
+.login button {
+    font: inherit;
+    width: 100%;
+    height: auto;
+    padding: 0.5rem;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    cursor: pointer;
 }
