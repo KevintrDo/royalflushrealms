@@ -7,7 +7,7 @@ const LoginCard = () => {
     return (
         <div className="hdr">
             <button></button>
-            <h1>Welcome, Fuck Davito Mark Grigsby Strazzerri the Third, of 
+            <h1>Welcome, Davito Mark Grigsby Strazzerri the Third, of 
                 diabeto the ninth!</h1>
 
         </div>

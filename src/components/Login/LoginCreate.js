@@ -7,10 +7,6 @@ const LoginCreate = () => {
     const [enteredEmail, setEnteredEmail] = useState('')
     const [enteredUserName, setEnteredUsername] = useState('')
     const [enteredPassword, setEnteredPassword] = useState('')
-    
-    
-
-    
 
       const submitHandler = (e) => {
         e.preventDefault();

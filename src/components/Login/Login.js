@@ -8,10 +8,6 @@ import './Login.css';
 const Login = () => {
     const [enteredUserName, setEnteredUsername] = useState('')
     const [enteredPassword, setEnteredPassword] = useState('')
-    
-    
-
-    
 
       const submitHandler = (e) => {
         e.preventDefault();
@@ -36,7 +32,7 @@ const Login = () => {
                 <Link to='/'>Home</Link>
                 <h1>Login Page</h1>
             </div>
-            <div class='card login'>
+            <div class='login'>
                 <form onSubmit={submitHandler}>
                     <label>Username</label>
                     <input

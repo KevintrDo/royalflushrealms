@@ -29,10 +29,10 @@
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    background-color: #333435;
-    color: black; 
+    background-color: #ffffff;
+    color: rgb(59, 97, 97); 
   }
   
   .home1:hover {
-    background-color: black;
+    background-color: rgb(132, 144, 255);
   }
