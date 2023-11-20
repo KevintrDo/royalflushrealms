@@ -39,16 +39,10 @@ const MainHdrOut = () => {
       };
   return (
     <div>
-      <div className="hdr">
-        <div className="nav-links">
-        <Link to="/add">
-        <button className="my-button">
-          
-            ADD
-          </button>
-          </Link>
+      <div className="hdrOut">
+        <div>
         </div>
-        <div className="user-info">
+        <div className="user-infoOut">
           <h1>Welcome, User! <img className="" src={myImage} alt="JOE BIDEN" /></h1>
           <div>
             <p>Your Domain is your conquer!</p>
