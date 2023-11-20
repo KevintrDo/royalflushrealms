@@ -4,6 +4,7 @@ import Location from "./Location";
 import './MainLocationList.css';
 import LocationFav from "./LocationFav";
 import LocationForm from "./LocationForm";
+import LocationFormR from "./LocationFormR";
 
 var MainLocationList = (props) => {
     const [leftColumnItems, setLeftColumnItems] = useState(props.locations);
@@ -47,6 +48,7 @@ var MainLocationList = (props) => {
     
     const[selectedLocation, setSelectedLocation] = useState(null);
     const[showEditForm, setShowEditForm] = useState(false);
+    const[showEditFormR, setShowEditFormR] = useState(false);
     
 
     const handleEditButtonClick  = (location) => {
@@ -71,7 +73,7 @@ var MainLocationList = (props) => {
 
     const handleEditButtonClickR  = (location) => {
         setSelectedLocation(location);
-        setShowEditForm(true);
+        setShowEditFormR(true);
     };
 
     const handleFormSubmitR = (locationData) => {
@@ -84,7 +86,7 @@ var MainLocationList = (props) => {
     }
 
     const handleFormCloseR = () => {
-        setShowEditForm(false);
+        setShowEditFormR(false);
         setSelectedLocation(null);
     };
 
@@ -132,8 +134,8 @@ var MainLocationList = (props) => {
                 />
             )}
 
-            {showEditForm && (
-                <LocationForm
+            {showEditFormR && (
+                <LocationFormR
                 onSubmit={handleFormSubmitR}
                 onClose={handleFormCloseR}
                 selectedLocation={selectedLocation}
