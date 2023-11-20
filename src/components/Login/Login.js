@@ -1,10 +1,13 @@
 import React from "react";
-import { Link } from 'react-router-dom'
+
+import {Link} from 'react-router-dom'
+import { useHistory } from 'react-router-dom';
 
 import './Login.css';
 
 const Login = () => {
     return (
+
         <div>
             <div className="hdr">
                 <Link to='/'>Home</Link>
@@ -32,6 +35,7 @@ const Login = () => {
                     <Link to='/signup'>Dont have an account? Sign up</Link>
                 </form>
             </div>
+
         </div>
     );
 };

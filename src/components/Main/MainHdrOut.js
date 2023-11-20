@@ -1,12 +1,12 @@
 import React,  { useState } from 'react';
 import { Link } from 'react-router-dom';
 import myImage from './img/Toilet logo picture.jpg'; // Adjust the path to your image
-import './MainHdr.css'; // Import your CSS file
+import './MainHdrOut.css'; // Import your CSS file
 import MainLocationList from './MainLocationList';
 import { useLocation } from 'react-router-dom';
 
 
-const MainHdr = () => {
+const MainHdrOut = () => {
     
       const DUMMY_LOCATION = [
         {
@@ -28,44 +28,39 @@ const MainHdr = () => {
           title: 'GOD',
           date: 22,
           img: 'https://media.tenor.com/4ia58csaI_sAAAAM/cat-war.gif',
-          comment: 'Chaos',
+          comment: 'Chaos'
         }
       ];
-      
-      var isLogged = true;
-      // if(receivedValuealue != null) {
-      //     isLogged = receivedValue;
-      // }
+      var isLogged = false;
       const [locationsList, setUsers] = useState(DUMMY_LOCATION);
       const addLocationHandler = (user) => {
         setUsers((prevUsers) => {
           return [user, ...prevUsers];
         });
       };
-  
-      return (
-        <div>
-          <div className="hdr">
-            <div className="nav-links">
-            <Link to="/add">
-            <button className="my-button">
-    
-                ADD
-              </button>
-              </Link>
+  return (
+    <div>
+      <div className="hdr">
+        <div className="nav-links">
+        <Link to="/add">
+        <button className="my-button">
           
-              </div>
+            ADD
+          </button>
+          </Link>
+        </div>
         <div className="user-info">
           <h1>Welcome, User! <img className="" src={myImage} alt="JOE BIDEN" /></h1>
           <div>
             <p>Your Domain is your conquer!</p>
           </div>
         </div>
-        <Link to='/' 
-        className="link-style">Logout</Link>
+        <Link to="/login" className="link-style">Login</Link>
+
       </div>
-      <MainLocationList loggedIn={true} locations={locationsList}/>
+      <MainLocationList loggedIn={false} locations={locationsList}/>
     </div>
   );
 };
-export default MainHdr;
+
+export default MainHdrOut;
