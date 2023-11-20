@@ -65,7 +65,7 @@ const FormAdd = () => {
                     Comment:
                     <input
                     type="text"
-                    name="commnet"
+                    name="comment"
                     value={formData.comment}
                     onChange={inputHandler}
                     />
