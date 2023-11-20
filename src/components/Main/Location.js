@@ -11,7 +11,6 @@ const Location = (props) => {
         props.handleEditButton(props.id, props.title, props.date, props.img, props.comment);
       };
     
-
     return (
         <MainCard>
             <ul key={props.id} className='unOrderList'>

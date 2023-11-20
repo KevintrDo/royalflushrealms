@@ -25,7 +25,7 @@ const Hdr = () => {
           title: 'GOD',
           date: 22,
           img: 'https://media.tenor.com/4ia58csaI_sAAAAM/cat-war.gif',
-          comment: 'Chaos'
+          comment: 'Chaos',
         }
       ];
       const [locationsList, setUsers] = useState(DUMMY_LOCATION);

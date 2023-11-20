@@ -3,7 +3,7 @@ import React, { useState} from 'react';
 import './LocationForm.css'
 import LocationFormButton from './LocationFormButton';
 
-const LocationForm = (props) => {
+const LocationFormR = (props) => {
 
   const [enteredTitle, setEnteredTitle] = useState(props.selectedLocation ? props.selectedLocation.title : '');
   const [enteredDate, setEnteredDate] = useState(props.selectedLocation ? props.selectedLocation.date : '');
@@ -92,4 +92,4 @@ const LocationForm = (props) => {
   );
 };
 
-export default LocationForm;
+export default LocationFormR;

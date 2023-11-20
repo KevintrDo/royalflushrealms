@@ -12,6 +12,7 @@ var MainLocationList = (props) => {
     const handleFavoriteButton = (itemID) => {
         const itemToMove = leftColumnItems.find((item) => item.id === itemID);
         if (itemToMove) {
+            console.log(itemID.column);
             const updatedLeftColumnItems = leftColumnItems.filter((item) => item.id !== itemID);
             setLeftColumnItems(updatedLeftColumnItems);
             setRightColumnItem([...rightColumnItem, itemToMove]);
@@ -27,22 +28,47 @@ var MainLocationList = (props) => {
         }
     };
     
-
+    const[selectedLocation, setSelectedLocation] = useState(null);
     const[showEditForm, setShowEditForm] = useState(false);
     
 
-    const handleEditButtonClick  = (id, title, date, img, comment) => {
-        console.log("Edit button clicked:", id, title, date, img, comment);
+    const handleEditButtonClick  = (location) => {
+        setSelectedLocation(location);
         setShowEditForm(true);
+        
     };
 
     const handleFormSubmit = (locationData) => {
-        console.log('Form submitted:', locationData);
+        setLeftColumnItems((prevLeftColumnItems) => {
+            return prevLeftColumnItems.map((location) =>
+                location.id === selectedLocation.id ? { ...location, ...locationData } : location
+            );
+        });
+        
     }
 
     const handleFormClose = () => {
-        console.log("DON'T DOO IT");
         setShowEditForm(false);
+        setSelectedLocation(null);
+    };
+
+    const handleEditButtonClickR  = (location) => {
+        setSelectedLocation(location);
+        setShowEditForm(true);
+    };
+
+    const handleFormSubmitR = (locationData) => {
+        setRightColumnItem((prevRightColumnItems) => {
+            return prevRightColumnItems.map((location) =>
+                location.id === selectedLocation.id ? { ...location, ...locationData } : location
+            );
+        });
+        
+    }
+
+    const handleFormCloseR = () => {
+        setShowEditForm(false);
+        setSelectedLocation(null);
     };
 
     return (
@@ -56,7 +82,7 @@ var MainLocationList = (props) => {
                         date={location.date}
                         comment={location.comment}
                         handleFavoriteButton={() => handleFavoriteButton(location.id)} // Pass the correct itemID
-                        handleEditButton={handleEditButtonClick}
+                        handleEditButton={() => handleEditButtonClick(location)}
                     />
                 ))}
             </ul>
@@ -69,6 +95,7 @@ var MainLocationList = (props) => {
                         date={location.date}
                         comment={location.comment}
                         handleUnfavoriteButton={() => handleUnfavoriteButton(location.id)}
+                        handleEditButton={() => handleEditButtonClickR(location)}
                     />
                 ))}
             </ul>
@@ -77,6 +104,15 @@ var MainLocationList = (props) => {
                 <LocationForm
                 onSubmit={handleFormSubmit}
                 onClose={handleFormClose}
+                selectedLocation={selectedLocation}
+                />
+            )}
+
+            {showEditForm && (
+                <LocationForm
+                onSubmit={handleFormSubmitR}
+                onClose={handleFormCloseR}
+                selectedLocation={selectedLocation}
                 />
             )}
         </MainCard>
