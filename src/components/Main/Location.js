@@ -8,7 +8,10 @@ import MainButtonDelete from './MainButtonDelete';
 
 const Location = (props) => {
 
-
+    const handleEditButtonClick = () => {
+        props.handleEditButton(props.id, props.title, props.date, props.img, props.comment);
+      };
+    
     return (
         <MainCard>
             <ul key={props.id} className='unOrderList'>
@@ -28,7 +31,7 @@ const Location = (props) => {
                     </MainButtonFavorite>
                     }
                     {props.isLoggedIn &&
-                    <MainButtonEdit type="submit>">Edit</MainButtonEdit>
+                    <MainButtonEdit type="submit" onClick={handleEditButtonClick}>Edit</MainButtonEdit>
                     }   
                     {console.log(props.isLoggedIn)}    
                     {props.isLoggedIn &&

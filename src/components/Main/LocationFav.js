@@ -8,6 +8,10 @@ import MainButtonDelete from './MainButtonDelete';
 
 const LocationFav = (props) => {
 
+    const handleEditButtonClickR = () => {
+        props.handleEditButton(props.id, props.title, props.date, props.img, props.comment);
+      };
+
     return (
         <MainCard>
             <ul key={props.id} className='unOrderList'>
@@ -24,8 +28,9 @@ const LocationFav = (props) => {
                     <MainButtonFavorite type="submit" className="favorite" onClick= {() => props.handleUnfavoriteButton(props.id)}>
                         Unfavorite
                     </MainButtonFavorite>
-                    <MainButtonEdit type="submit">Edit</MainButtonEdit>
+                    <MainButtonEdit type="submit" onClick={handleEditButtonClickR}>Edit</MainButtonEdit>
                     <MainButtonDelete type="submit" onClick= {() => props.handleRightDelete(props.id)}>Delete</MainButtonDelete>
+
                 </div>
             </ul>
         </MainCard>

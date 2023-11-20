@@ -28,7 +28,7 @@ const MainHdr = () => {
           title: 'GOD',
           date: 22,
           img: 'https://media.tenor.com/4ia58csaI_sAAAAM/cat-war.gif',
-          comment: 'Chaos'
+          comment: 'Chaos',
         }
       ];
       
@@ -42,16 +42,24 @@ const MainHdr = () => {
           return [user, ...prevUsers];
         });
       };
-  return (
-    <div>
-      <div className="hdr">
-        <div className="nav-links">
-        <Link to="/add">
-        <button className="my-button">
-          
-            ADD
-          </button>
-          </Link>
+  
+    return (
+        <div>
+            <div className="hdr">
+            <Link 
+            to='/add'
+            >Add</Link>
+            <Link 
+            to='/edit'
+            >Edit</Link>
+            <h1>Welcome, User!</h1>
+            <img src="src\components\Main\img\Toilet logo picture.jpg" alt="JOE BIDEN"></img>
+                    <Link 
+            to='/login'
+            >Login</Link>
+            </div>
+            <MainLocationList locations={locationsList}/>
+
         </div>
         <div className="user-info">
           <h1>Welcome, User! <img className="" src={myImage} alt="JOE BIDEN" /></h1>
