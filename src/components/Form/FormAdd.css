@@ -19,7 +19,7 @@
     color: #fff; 
 }
 
-.home {
+.home1 {
     display: inline-block;
     padding: 10px 20px;
     font-size: 16px;
@@ -33,6 +33,6 @@
     color: black; 
   }
   
-  .home:hover {
+  .home1:hover {
     background-color: black;
   }
