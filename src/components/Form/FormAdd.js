@@ -33,13 +33,13 @@ const FormAdd = () => {
     return (
         <div>
         <div className="hdr">
-            <button className="home">
+            <button className="home1">
             <Link to='/home'>Home</Link>
             </button>
             <h1>Add Bathroom</h1>
             </div>
             <div>
-                <FormCard>
+                <FormCard className="form-class">
             <form onSubmit={submitHandler}>
                 <label>
                     Bathroom Name: 
