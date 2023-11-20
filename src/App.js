@@ -1,11 +1,7 @@
 import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
-import React,  { useState } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import Hdr from './components/Main/MainHdr';
 import HdrOut from './components/Main/MainHdrOut';
-import MainLocationList from './components/Main/MainLocationList';
-import LoginCard from './components/Login/LoginCard';
 import FormAdd from './components/Form/FormAdd'
 import FormEdit from './components/Form/FormEdit'
 import Login from './components/Login/Login'

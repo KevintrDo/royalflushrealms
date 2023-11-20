@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import myImage from './img/Toilet logo picture.jpg'; // Adjust the path to your image
 import './MainHdr.css'; // Import your CSS file
 import MainLocationList from './MainLocationList';
-import { useLocation } from 'react-router-dom';
 
 
 const MainHdr = () => {
@@ -32,10 +31,6 @@ const MainHdr = () => {
         }
       ];
       
-      var isLogged = true;
-      // if(receivedValuealue != null) {
-      //     isLogged = receivedValue;
-      // }
       const [locationsList, setUsers] = useState(DUMMY_LOCATION);
       const addLocationHandler = (user) => {
         setUsers((prevUsers) => {

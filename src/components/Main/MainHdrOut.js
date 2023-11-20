@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import myImage from './img/Toilet logo picture.jpg'; // Adjust the path to your image
 import './MainHdrOut.css'; // Import your CSS file
 import MainLocationList from './MainLocationList';
-import { useLocation } from 'react-router-dom';
 
 
 const MainHdrOut = () => {
@@ -31,7 +30,7 @@ const MainHdrOut = () => {
           comment: 'Chaos'
         }
       ];
-      var isLogged = false;
+
       const [locationsList, setUsers] = useState(DUMMY_LOCATION);
       const addLocationHandler = (user) => {
         setUsers((prevUsers) => {
@@ -40,10 +39,16 @@ const MainHdrOut = () => {
       };
   return (
     <div>
-      <div className="hdrOut">
-      <div></div>
-        <div className="user-infoOut">
+      <div className="hdr">
+        <div className="nav-links">
+        <Link to="/add">
+        <button className="my-button">
           
+            ADD
+          </button>
+          </Link>
+        </div>
+        <div className="user-info">
           <h1>Welcome, User! <img className="" src={myImage} alt="JOE BIDEN" /></h1>
           <div>
             <p>Your Domain is your conquer!</p>
