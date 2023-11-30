@@ -1,5 +1,5 @@
-.hdr {
-    background-color: #333435;
+.Mainhdr {
+    background-color: #050505;
     color: #fff;
     padding: 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -12,58 +12,66 @@
     justify-content: space-between;
     align-items: center;
   }
-  
-  .link-style{
-    margin: 0 10px;
-    font-size: 30px;
-    text-decoration: none;
-    color: pink;
+
+  .mainHdrOutBackground {
+    background-image: url('https://img.freepik.com/free-photo/black-stones-tiled-floor_1194-6238.jpg?w=1380&t=st=1701358156~exp=1701358756~hmac=2afed33100287d4e8ef6dced3b393f74375227de9b36cb1c76e74cb04bff6e69');
   }
   
-  .user-info {
+  .MainHdruser-info {
   
     display:flex;
     flex-direction: column;
   }
   
-  .user-info h1 {
+  .MainHdruser-info h1 {
     margin: 0;
-    color: #F1F445;
+    color: #F8DE7E;
     margin-bottom: 5px;
   }
   
-  .user-info img {
+  .MainHdruser-info img {
     width: 5px;
     border-radius: 50%;
     margin-top: 5px;
   }
   
-  .login-button {
-    color: pink;
-  }
-  
-  .hdr:hover {
-    background-color: #e74c3c;
-    color: #fff;
-  }
-
-  .hdr img {
-    width: 50px;
-    border-radius: 50%;
-    margin-top: 5px;
-}
-
-.my-button {
-    background-color: #3498db;
-    color: #fff;
+  .MainHdrmy-button-logout {
+    background-color: #ff849c;
+    color: #000000;
     padding: 10px 20px;
     font-size: 40px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+  }
 
+  .MainHdrmy-button-logout:hover {
+    background-color: rgb(187, 108, 121);
+    transform: scale(1.1); 
   }
   
-  .my-button:hover {
+  .Mainhdr:hover {
+    background-color: #1b1b1b;
+    color: #fff;
+  }
+
+  .Mainhdr img {
+    width: 50px;
+    border-radius: 50%;
+    margin-top: 5px;
+}
+
+.MainHdrmy-button {
+    background-color: #8AB9F1;
+    color: #000000;
+    padding: 10px 20px;
+    font-size: 40px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .MainHdrmy-button:hover {
     background-color: #2980b9;
+    transform: scale(1.1); 
   }

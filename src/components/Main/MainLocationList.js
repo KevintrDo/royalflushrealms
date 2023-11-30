@@ -6,10 +6,10 @@ import LocationFav from "./LocationFav";
 import LocationForm from "./LocationForm";
 import LocationFormR from "./LocationFormR";
 
+
 var MainLocationList = (props) => {
     const [leftColumnItems, setLeftColumnItems] = useState(props.locations);
     const [rightColumnItem, setRightColumnItem] = useState([]);
-
 
     const handleFavoriteButton = (itemID) => {
         const itemToMove = leftColumnItems.find((item) => item.id === itemID);

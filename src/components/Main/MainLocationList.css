@@ -6,7 +6,7 @@
     grid-template-columns: 1fr 1fr;
     background-color: #b0a1a1;
     border-radius: 20px;
-    box-shadow: 9px 10px 8px 5px rgb(88, 88, 88);
+    box-shadow: 9px 10px 8px 5px rgb(0, 0, 0);
   }
   
   .users ul {
@@ -21,4 +21,8 @@
     border: 1px solid #ccc;
     margin: 0.5rem 0;
     padding: 0.5rem;
+  }
+
+  .mainLocationBackground {
+    background-image: url('https://img.freepik.com/free-photo/black-stones-tiled-floor_1194-6238.jpg?w=1380&t=st=1701358156~exp=1701358756~hmac=2afed33100287d4e8ef6dced3b393f74375227de9b36cb1c76e74cb04bff6e69');  
   }

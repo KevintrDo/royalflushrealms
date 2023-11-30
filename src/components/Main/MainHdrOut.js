@@ -1,7 +1,7 @@
 import React,  { useState } from 'react';
 import { Link } from 'react-router-dom';
 import myImage from './img/Toilet logo picture.jpg'; // Adjust the path to your image
-import './MainHdrOut.css'; // Import your CSS file
+import './MainHdrOut.css'; 
 import MainLocationList from './MainLocationList';
 
 
@@ -37,19 +37,21 @@ const MainHdrOut = () => {
           return [user, ...prevUsers];
         });
       };
+      
   return (
-    <div>
-      <div className="hdrOut">
+    <div className='mainHdrOutBackground'>
+      <div className="MainHdrOut">
         <div>
         </div>
-        <div className="user-infoOut">
+        <div className="MainHdrOutuser-info">
           <h1>Welcome, User! <img className="" src={myImage} alt="JOE BIDEN" /></h1>
           <div>
             <p>Your Domain is your conquer!</p>
           </div>
         </div>
-        <Link to="/login" className="link-style">Login</Link>
-
+          <Link to='/login'>
+            <button className='MainHdrOutmy-button-logout'>login</button>  
+          </Link>
       </div>
       <MainLocationList loggedIn={false} locations={locationsList}/>
     </div>
