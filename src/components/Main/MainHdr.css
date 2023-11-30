@@ -13,10 +13,6 @@
     align-items: center;
   }
 
-  .mainHdrOutBackground {
-    background-image: url('https://img.freepik.com/free-photo/black-stones-tiled-floor_1194-6238.jpg?w=1380&t=st=1701358156~exp=1701358756~hmac=2afed33100287d4e8ef6dced3b393f74375227de9b36cb1c76e74cb04bff6e69');
-  }
-  
   .MainHdruser-info {
   
     display:flex;
@@ -26,7 +22,6 @@
   .MainHdruser-info h1 {
     margin: 0;
     color: #F8DE7E;
-    margin-bottom: 5px;
   }
   
   .MainHdruser-info img {

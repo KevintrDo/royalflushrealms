@@ -50,7 +50,7 @@ const MainHdrOut = () => {
           </div>
         </div>
           <Link to='/login'>
-            <button className='MainHdrOutmy-button-logout'>login</button>  
+            <button className='MainHdrOutmy-button-logout'>Login</button>  
           </Link>
       </div>
       <MainLocationList loggedIn={false} locations={locationsList}/>

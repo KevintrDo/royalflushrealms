@@ -30,38 +30,39 @@ const LoginCreate = () => {
         setEnteredPassword(event.target.value)
     }
     return (
-        <div>
-            <div className="hdr">
-                <Link to='/'>Home</Link>
+        <div className="mainHdrOutBackground">
+            <div className="loginHdr">
+                <Link to='/'><button className="loginHome">Home</button></Link>
                 <h1>Create your account</h1>
-                <Link to='/login'>Login</Link>
+                <Link to='/login'><button className="MainHdrOutmy-button-logout">Login</button></Link>
             </div>
-            <div class='card login'>
-                <form onSubmit={submitHandler}>
-                    <label>Username</label>
-                    <input
-                        id="username"
-                        type="text"
-                        onChange={UsernameChangeHandler}
-                        value={enteredUserName}
-                    />
-                    <label>Email</label>
-                    <input
-                        id="email"
-                        type="text"
-                        onChange={EmailChangeHandler}
-                        value={enteredEmail}
-                    />
-                    <label>Password</label>
-                    <input
-                        id="password"
-                        type="text"
-                        onChange={PasswordChangeHandler}
-                        value={enteredPassword}
-                    />
-
-                    <Link to='/home'><button class="buttonEdit" type="submit">Create</button></Link>
-                </form>
+            <div className="login-Container">
+                <div className='login'>
+                    <form onSubmit={submitHandler}>
+                        <label>Username</label>
+                            <input
+                                id="username"
+                                type="text"
+                                onChange={UsernameChangeHandler}
+                                value={enteredUserName}
+                            />
+                            <label>Email</label>
+                            <input
+                                id="email"
+                                type="text"
+                                onChange={EmailChangeHandler}
+                                value={enteredEmail}
+                            />
+                            <label>Password</label>
+                            <input
+                                id="password"
+                                type="text"
+                                onChange={PasswordChangeHandler}
+                                value={enteredPassword}
+                           />
+                        <Link to='/home'><button class="buttonEdit" type="submit">Create</button></Link>
+                    </form>
+                </div>
             </div>
         </div>
     );

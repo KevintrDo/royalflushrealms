@@ -1,5 +1,5 @@
-.hdr {
-    background-color: #333435;
+.loginHdr {
+    background-color: #050505;
     color: #fff;
     padding: 20px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -8,24 +8,40 @@
     font-family: 'Arial', sans-serif;
     line-height: 1.5;
     transition: background-color 0.3s, color 0.3s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+.loginBackground{
+    background-image: url('https://img.freepik.com/free-photo/black-stones-tiled-floor_1194-6238.jpg?w=1380&t=st=1701358156~exp=1701358756~hmac=2afed33100287d4e8ef6dced3b393f74375227de9b36cb1c76e74cb04bff6e69');
 }
 
-.hdr h1 {
-    margin: 0 auto;
-    color: #F1F445;
+.loginHdr h1 {
+    color: #F8DE7E;
 }
 
-.hdr:hover {
-    background-color: #e74c3c;
+.loginHdr:hover {
+    background-color: #1b1b1b;
     color: #fff;
 }
 
+.login-Container {
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
 .login {
-    margin: 2rem auto;
+    margin-top: 50px;
+    margin-bottom:365px;
     padding: 1rem;
-    width: 90%;
-    max-width: 40rem;
-    height: 400px;
+    width: 40%;
+    height: 300px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -54,11 +70,36 @@
 
 .login button {
     font: inherit;
+    margin:15px;
+    margin-bottom: 25px;
     width: 100%;
     height: auto;
     padding: 0.5rem;
-    background-color: #3498db;
-    color: #fff;
+    background-color: #8AB9F1;
+    color: #000000;
+    font-size: 25px;
+    border-radius: 30px;
+    font-weight: 700;
     border: none;
     cursor: pointer;
 }
+  
+  .login button:hover {
+    background-color: #2980b9;
+    transform: scale(1.1); 
+  }
+
+.loginHome {
+    background-color: #8AB9F1;
+    color: #000000;
+    padding: 10px 20px;
+    font-size: 35px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .loginHome:hover {
+    background-color: #2980b9;
+    transform: scale(1.1); 
+  }

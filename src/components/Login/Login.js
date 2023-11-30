@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 
-import {Link} from 'react-router-dom'
+import {Link} from 'react-router-dom';
 
 import './Login.css';
 
@@ -25,35 +25,34 @@ const Login = () => {
         setEnteredPassword(event.target.value)
     }
     return (
-
-        <div>
-            <div className="hdr">
-                <Link to='/'>Home</Link>
+        <div className="loginBackground">
+            <div className="loginHdr">
+                <Link to='/'><button className="loginHome">Home</button></Link>
                 <h1>Login Page</h1>
+                <div></div>
             </div>
-            <div class='login'>
-                <form onSubmit={submitHandler}>
-                    <label>Username</label>
-                    <input
-                        id="username"
-                        type="text"
-                        onChange={UsernameChangeHandler}
-                        value={enteredUserName}
-                    />
-                    <label>Password</label>
-                    <input
-                        id="password"
-                        type="text"
-                        onChange={PasswordChangeHandler}
-                        value={enteredPassword}
-                    />
-                  
-
-                    <Link to='/home'><button class="buttonEdit" type="submit" >Login</button></Link>
-                    <Link to='/signup'>Dont have an account? Sign up</Link>
-                </form>
+            <div className="login-Container">
+                <div className='login'>
+                    <form onSubmit={submitHandler}>
+                        <label>Username</label>
+                        <input
+                            id="username"
+                            type="text"
+                            onChange={UsernameChangeHandler}
+                            value={enteredUserName}
+                        />
+                        <label>Password</label>
+                        <input
+                            id="password"
+                            type="text"
+                            onChange={PasswordChangeHandler}
+                            value={enteredPassword}
+                        />
+                        <Link to='/home'><button class="buttonEdit" type="submit" >Login</button></Link>
+                        <Link to='/signup'>Dont have an account? Sign up</Link>
+                    </form>
+                </div>
             </div>
-
         </div>
     );
 };
