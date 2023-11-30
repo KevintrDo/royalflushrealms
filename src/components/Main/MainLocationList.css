@@ -26,3 +26,17 @@
   .mainLocationBackground {
     background-image: url('https://img.freepik.com/free-photo/black-stones-tiled-floor_1194-6238.jpg?w=1380&t=st=1701358156~exp=1701358756~hmac=2afed33100287d4e8ef6dced3b393f74375227de9b36cb1c76e74cb04bff6e69');  
   }
+
+  .rec-fav {
+    text-align: center;
+  }
+
+  .box-contain {
+    border: 1px solid #ccc;
+    padding: 0px;
+    border-radius: 10px;
+    background-color: #FFC40A;
+    margin-bottom: 50px;
+    margin-left: 55px;
+    margin-right: 55px;
+  }

@@ -96,6 +96,9 @@ var MainLocationList = (props) => {
     return (
         <MainCard className="users">
             <ul>
+                <div className='box-contain'>
+                <h4 className='rec-fav'>Recents</h4>
+                </div>
                 {leftColumnItems.map((location) => (
                     <Location
                         key={location.id}
@@ -112,6 +115,9 @@ var MainLocationList = (props) => {
                 ))}
             </ul>
             <ul>
+            <div className='box-contain'>
+                <h4 className='rec-fav'>Favorites</h4>
+                </div>
                 {rightColumnItem.map((location) => (
                     <LocationFav
                         key={location.id}

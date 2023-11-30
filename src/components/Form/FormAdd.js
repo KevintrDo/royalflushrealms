@@ -31,14 +31,20 @@ const FormAdd = () => {
           });
     }
     return (
-        <div>
-        <div className="hdr">
-            <button className="home1">
-            <Link to='/home'>Home</Link>
-            </button>
+        <div className='formhdr-background'>
+        <div className="form-hdr">
+        <Link to='/home'>
+            <button className="formhdr-button">Home</button>
+            </Link>
+            <div className='formhdr-info'>
             <h1>Add Bathroom</h1>
+            <h3>Fill out the form to add a new bathroom!</h3>
             </div>
-            <div>
+            <Link to='/logout'>
+            <button className="formhdr-logout">Logout</button>
+            </Link>
+            </div>
+            <div className='formcard-container'>
                 <FormCard className="form-class">
             <form onSubmit={submitHandler}>
                 <label>
@@ -81,7 +87,7 @@ const FormAdd = () => {
                     />
                 </label>
                 <br/>
-                <button type="submit">Submit</button>
+                <button className='form-submit' type="submit">Submit</button>
             </form>
             </FormCard>
         </div>

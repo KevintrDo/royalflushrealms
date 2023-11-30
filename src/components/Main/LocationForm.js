@@ -61,7 +61,7 @@ const LocationForm = (props) => {
               <br/>
               <label>Date: </label>
               <input 
-              type="text" 
+              type="date" 
               id="date" 
               onChange={dateChangeHandler}
               value={enteredDate}
