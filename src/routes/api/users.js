@@ -7,7 +7,7 @@ const User = require('../../models/User');
 
 
 userRouter.post("/signup", async (req, res) => {
-    console.log('Received request with body:', req.body);
+    console.log(req.body);
     try {
         const { email, password, confirmPassword, username} = req.body;
         if (!email || !password || !username || !confirmPassword) {

@@ -5,9 +5,9 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 
 //Connect Database
-const items = require('./src/routes/api/users');
-
-app.use('/api/users', items);
+const users = require('./src/routes/api/users');
+// app.use(express.json());
+app.use('/api/users', users);
 app.use(cors({origin: true, credentials: true}));
 app.use(express.json({extended: false}));
 
@@ -19,7 +19,10 @@ app.get('/user/:id', (req,res) => {
 
 const conn_str ='mongodb+srv://danielgrigsby03:daniel123@cluster0.gwseuh2.mongodb.net/?retryWrites=true&w=majority'
 mongoose.set('strictQuery', false);
-mongoose.connect(conn_str)
+mongoose.connect(conn_str, {
+    useUnifiedTopology: true,
+    useNewUrlParser: true
+})
 .then(() => {
     app.listen(port)
     console.log('MongoDB Connection Suceeded...')

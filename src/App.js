@@ -39,7 +39,7 @@ const App = () => {
       });
     }
   };
-  checkLoggedIn();
+  //checkLoggedIn();
 }, []);
   return (
     <UserContext.Provider value={{userData, setUserData}}>
