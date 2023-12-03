@@ -6,12 +6,8 @@ const auth = require("../../middleware/auth");
 const User = require('../../models/User');
 
 
-userRouter.get("/help", async(req, res) => {
-    return res 
-            .status(400)
-            .send({ msg: "User with this email does not exist"});
-    })
 userRouter.post("/signup", async (req, res) => {
+    console.log('Received request with body:', req.body);
     try {
         const { email, password, confirmPassword, username} = req.body;
         if (!email || !password || !username || !confirmPassword) {

@@ -10,7 +10,6 @@ const items = require('./src/routes/api/users');
 app.use('/api/users', items);
 app.use(cors({origin: true, credentials: true}));
 app.use(express.json({extended: false}));
-app.get('/',(req,res) => res.send('Hello world!'));
 
 
 
