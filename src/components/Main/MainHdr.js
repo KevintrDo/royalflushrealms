@@ -1,10 +1,12 @@
+
+import React from 'react';
 import { Link } from 'react-router-dom';
-import myImage from './img/Toilet logo picture.jpg'; // Adjust the path to your image
+import myImage from './img/Toilet logo picture.jpg';
 import './MainHdr.css';
 import MainLocationList from './MainLocationList';
 
 const MainHdr = ({locations}) => {
-  
+
       return (
       <div className='mainHdrOutBackground'>
         <div className="Mainhdr">

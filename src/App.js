@@ -56,7 +56,6 @@ function App() {
           <Route path='/login' element={<Login/>} />
           <Route path='/logout' element={<Login/>} />
           <Route path='/signup' element={<LoginCreate/>} />
-          <Route path='/add' element={<FormAdd/>} />
           <Route path='/add' element={<FormAdd onAddLocation={addLocationHandler}/>}/>
           <Route path='/home'element={<Hdr locations={locationsList}/>}/>
           <Route path='/homeOut' element={<HdrOut locations={locationsList}/>} />
