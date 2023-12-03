@@ -49,14 +49,14 @@ const LoginCreate = () => {
                             <label>Email</label>
                             <input
                                 id="email"
-                                type="text"
+                                type="email"
                                 onChange={EmailChangeHandler}
                                 value={enteredEmail}
                             />
                             <label>Password</label>
                             <input
                                 id="password"
-                                type="text"
+                                type="password"
                                 onChange={PasswordChangeHandler}
                                 value={enteredPassword}
                            />

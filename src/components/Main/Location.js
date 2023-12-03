@@ -32,8 +32,7 @@ const Location = (props) => {
                     }
                     {props.isLoggedIn &&
                     <MainButtonEdit type="submit" onClick={handleEditButtonClick}>Edit</MainButtonEdit>
-                    }   
-                    {console.log(props.isLoggedIn)}    
+                    }      
                     {props.isLoggedIn &&
                     <MainButtonDelete stype="submit" onClick= {() => props.handleLeftDelete(props.id)}>Delete</MainButtonDelete>
                     }

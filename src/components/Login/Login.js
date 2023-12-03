@@ -34,7 +34,7 @@ const Login = () => {
             <div className="login-Container">
                 <div className='login'>
                     <form onSubmit={submitHandler}>
-                        <label>Username</label>
+                        <label>Username/Email</label>
                         <input
                             id="username"
                             type="text"
@@ -44,7 +44,7 @@ const Login = () => {
                         <label>Password</label>
                         <input
                             id="password"
-                            type="text"
+                            type="password"
                             onChange={PasswordChangeHandler}
                             value={enteredPassword}
                         />
