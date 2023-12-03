@@ -3,7 +3,6 @@ import {Link} from 'react-router-dom'
 import { useState } from "react";
 import './FormAdd.css';
 import FormCard from "./FormCard";
-import MainHdr from "../Main/MainHdr";
 
 const FormAdd = ({onAddLocation}) => {
     const [formData, setFormData] = useState({
@@ -31,6 +30,7 @@ const FormAdd = ({onAddLocation}) => {
             date: formData.date,
             comment: formData.comment,
             img: formData.image,
+            side: 'left',
         };
 
         onAddLocation(newLocation);
