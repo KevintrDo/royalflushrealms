@@ -3,8 +3,9 @@ import {Link} from 'react-router-dom'
 import { useState } from "react";
 import './FormAdd.css';
 import FormCard from "./FormCard";
+import MainHdr from "../Main/MainHdr";
 
-const FormAdd = () => {
+const FormAdd = ({onAddLocation}) => {
     const [formData, setFormData] = useState({
         bathroomName:'',
         date:'',
@@ -23,6 +24,17 @@ const FormAdd = () => {
     const submitHandler = (newItem) => {
         newItem.preventDefault();
         console.log('form submitted', formData);
+
+        const newLocation = {
+            id: Math.random().toString(),
+            title: formData.bathroomName,
+            date: formData.date,
+            comment: formData.comment,
+            img: formData.image,
+        };
+
+        onAddLocation(newLocation);
+        
         setFormData({
             bathroomName: '',
             date:'',
