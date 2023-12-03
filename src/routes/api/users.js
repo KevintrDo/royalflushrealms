@@ -5,6 +5,12 @@ const jwt = require("jsonwebtoken");
 const auth = require("../../middleware/auth");
 const User = require('../../models/User');
 
+
+userRouter.get("/help", async(req, res) => {
+    return res 
+            .status(400)
+            .send({ msg: "User with this email does not exist"});
+    })
 userRouter.post("/signup", async (req, res) => {
     try {
         const { email, password, confirmPassword, username} = req.body;
