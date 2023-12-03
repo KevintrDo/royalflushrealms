@@ -25,12 +25,17 @@ const LocationFav = (props) => {
                     </div>
                 </div>
                 <div className='button-flex'>
+                {props.isLoggedIn &&
                     <MainButtonFavorite type="submit" className="favorite" onClick= {() => props.handleUnfavoriteButton(props.id)}>
                         Unfavorite
                     </MainButtonFavorite>
+                }
+                {props.isLoggedIn &&
                     <MainButtonEdit type="submit" onClick={handleEditButtonClickR}>Edit</MainButtonEdit>
+                }
+                {props.isLoggedIn &&
                     <MainButtonDelete type="submit" onClick= {() => props.handleRightDelete(props.id)}>Delete</MainButtonDelete>
-
+                }
                 </div>
             </ul>
         </MainCard>

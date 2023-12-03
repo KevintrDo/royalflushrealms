@@ -3,7 +3,6 @@ import './App.css';
 import Hdr from './components/Main/MainHdr';
 import HdrOut from './components/Main/MainHdrOut';
 import FormAdd from './components/Form/FormAdd'
-import FormEdit from './components/Form/FormEdit'
 import Login from './components/Login/Login'
 import LoginCreate from './components/Login/LoginCreate'
 import { useState } from 'react';
@@ -53,7 +52,7 @@ function App() {
           <Route path='/login' element={<Login/>} />
           <Route path='/logout' element={<Login/>} />
           <Route path='/signup' element={<LoginCreate/>} />
-          <Route path='/edit' element={<FormEdit/>} />
+          <Route path='/add' element={<FormAdd/>} />
           <Route path='/add' element={<FormAdd onAddLocation={addLocationHandler}/>}/>
           <Route path='/home'element={<Hdr locations={locationsList}/>}/>
           <Route path='/homeOut' element={<HdrOut/>} />
