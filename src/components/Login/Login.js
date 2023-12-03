@@ -42,7 +42,7 @@ const Login = () => {
             <div className="login-Container">
                 <div className='login'>
       
-                    <form onSubmit={submitHandler}>
+                    <form onSubmit={handleSubmit}>
                         <label>Username/Email</label>
                         <input
                             id="email"
