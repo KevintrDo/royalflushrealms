@@ -10,8 +10,7 @@ import LoginCreate from './components/Login/LoginCreate'
 
 
 const App = () => {
-  const users = require('./routes/api/users');
-  
+
   return (
     <Router>
       <div>
