@@ -41,8 +41,9 @@ const Login = () => {
             </div>
             <div className="login-Container">
                 <div className='login'>
-                    <form onSubmit={handleSubmit}>
-                        <label>Email</label>
+      
+                    <form onSubmit={submitHandler}>
+                        <label>Username/Email</label>
                         <input
                             id="email"
                             required
@@ -51,8 +52,11 @@ const Login = () => {
                         <label>Password</label>
                         <input
                             id="password"
+
+                            type="password"
                             required
                             onChange={(e) => setPassword(e.target.value)}
+
                         />
                         <Link to='/home'><button class="buttonEdit" type="submit" >Login</button></Link>
                         <Link to='/signup'>Dont have an account? Sign up</Link>

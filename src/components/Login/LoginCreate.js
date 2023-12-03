@@ -58,19 +58,21 @@ const LoginCreate = () => {
                             <label>Email</label>
                             <input
                                 id="email"
-                                type="text"
+                                type="email"
                                 required
                                 onChange={(e) => setEmail(e.target.value)}
                             />
                             <label>Password</label>
                             <input
                                 id="password"
+                                type="password"
                                 required
                                 onChange={(e) => setPassword(e.target.value)}
                            />
                            <label>Password Confirmation</label>
                             <input
                                 id="password"
+                                type="password"
                                 required
                                 onChange={(e) => setConfirmPassword(e.target.value)}
                            />

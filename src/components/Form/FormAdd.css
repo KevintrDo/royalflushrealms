@@ -1,38 +1,82 @@
-.hdr {
-    background-color: #333435; 
-    color: #fff; 
-    padding: 20px; 
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
-    text-align: center; 
-    font-size: 18px; 
-    font-family: 'Arial', sans-serif; 
-    line-height: 1.5; 
-    transition: background-color 0.3s, color 0.3s;
-}
-.hdr h1 {
-    margin: 0 auto;
-    color: #F1F445;
-}
-
-.hdr:hover {
-    background-color: #e74c3c; 
-    color: #fff; 
-}
-
-.home1 {
-    display: inline-block;
-    padding: 10px 20px;
-    font-size: 16px;
-    font-weight: bold;
+.form-hdr {
+    background-color: #050505;
+    color: #fff;
+    padding: 0px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     text-align: center;
-    text-decoration: none;
+    font-size: 18px;
+    font-family: 'Arial', sans-serif;
+    line-height: 1.5;
+    transition: background-color 0.3s, color 0.3s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.formhdr-background {
+    background-image: url('https://img.freepik.com/free-photo/black-stones-tiled-floor_1194-6238.jpg?w=1380&t=st=1701358156~exp=1701358756~hmac=2afed33100287d4e8ef6dced3b393f74375227de9b36cb1c76e74cb04bff6e69');
+}
+.formhdr-info{
+    margin: 0 auto;
+    color: #F8DE7E;
+    display:flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+.formhdr-info h3 {
+    font-size: smaller;
+    color: white;
+}
+.form-hdr:hover {
+    background-color: #1b1b1b;
+    color: #fff;
+}
+
+.formhdr-button {
+    background-color: #8AB9F1;
+    color: #000000;
+    padding: 10px 20px;
+    font-size: 40px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    background-color: #ffffff;
-    color: rgb(59, 97, 97); 
+    text-decoration: none;
+    margin-left: 10px;
   }
   
-  .home1:hover {
-    background-color: rgb(132, 144, 255);
+  .formhdr-button:hover {
+    background-color: #2980b9;
+    transform: scale(1.1); 
+  }
+
+  .formhdr-logout {
+    background-color: #ff849c;
+    color: #000000;
+    padding: 10px 20px;
+    font-size: 40px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+  }
+
+  .formhdr-logout:hover {
+    background-color: rgb(187, 108, 121);
+    transform: scale(1.1); 
+  }
+
+  .form-submit {
+    background-color: #FFC40A;
+    color: #000000;
+    padding: 10px 20px;
+    font-size: 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  .form-submit:hover {
+    background-color: #ffcc26;
+    transform: scale(1.1);
   }

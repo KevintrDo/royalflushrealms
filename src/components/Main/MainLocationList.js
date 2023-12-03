@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import MainCard from "./MainCard";
 import Location from "./Location";
 import './MainLocationList.css';
@@ -8,13 +8,21 @@ import LocationFormR from "./LocationFormR";
 
 
 var MainLocationList = (props) => {
-    const [leftColumnItems, setLeftColumnItems] = useState(props.locations);
+    const [leftColumnItems, setLeftColumnItems] = useState([]);
     const [rightColumnItem, setRightColumnItem] = useState([]);
+
+    useEffect(() => {
+        // Filter locations based on the side prop
+        const leftItems = props.locations.filter(location => location.side === 'left');
+        const rightItems = props.locations.filter(location => location.side === 'right');
+
+        setLeftColumnItems(leftItems);
+        setRightColumnItem(rightItems);
+    }, [props.locations]);
 
     const handleFavoriteButton = (itemID) => {
         const itemToMove = leftColumnItems.find((item) => item.id === itemID);
         if (itemToMove) {
-            console.log(itemID.column);
             const updatedLeftColumnItems = leftColumnItems.filter((item) => item.id !== itemID);
             setLeftColumnItems(updatedLeftColumnItems);
             setRightColumnItem([...rightColumnItem, itemToMove]);
@@ -54,7 +62,6 @@ var MainLocationList = (props) => {
     const handleEditButtonClick  = (location) => {
         setSelectedLocation(location);
         setShowEditForm(true);
-        
     };
 
     const handleFormSubmit = (locationData) => {
@@ -63,7 +70,6 @@ var MainLocationList = (props) => {
                 location.id === selectedLocation.id ? { ...location, ...locationData } : location
             );
         });
-        
     }
 
     const handleFormClose = () => {
@@ -90,16 +96,16 @@ var MainLocationList = (props) => {
         setSelectedLocation(null);
     };
 
-    
-
 
     return (
         <MainCard className="users">
             <ul>
+                <div className='box-contain'>
+                <h4 className='rec-fav'>Recents</h4>
+                </div>
                 {leftColumnItems.map((location) => (
                     <Location
                         key={location.id}
-                        {...console.log(location.id)}
                         img={location.img}
                         title={location.title}
                         date={location.date}
@@ -112,6 +118,9 @@ var MainLocationList = (props) => {
                 ))}
             </ul>
             <ul>
+            <div className='box-contain'>
+                <h4 className='rec-fav'>Favorites</h4>
+                </div>
                 {rightColumnItem.map((location) => (
                     <LocationFav
                         key={location.id}
@@ -121,6 +130,7 @@ var MainLocationList = (props) => {
                         comment={location.comment}
                         handleUnfavoriteButton={() => handleUnfavoriteButton(location.id)}
                         handleRightDelete={() => handleRightDelete(location.id)}
+                        isLoggedIn={props.loggedIn}
                         handleEditButton={() => handleEditButtonClickR(location)}
                     />
                 ))}
