@@ -9,12 +9,12 @@ import MainButtonDelete from './MainButtonDelete';
 const LocationFav = (props) => {
 
     const handleEditButtonClickR = () => {
-        props.handleEditButton(props.itemKey, props.title, props.date, props.img, props.comment);
+        props.handleEditButton(props);
       };
 
     return (
         <MainCard>
-            <ul key={props.itemKey} className='unOrderList'>
+            <ul key={props.id} className='unOrderList'>
                 <div className='four-col-grid'>
                         <h1 className='title'>{props.title}</h1>
                         <h1>Date: {props.date}</h1>
@@ -26,7 +26,7 @@ const LocationFav = (props) => {
                 </div>
                 <div className='button-flex'>
                 {props.isLoggedIn &&
-                    <MainButtonFavorite type="submit" className="favorite" onClick= {() => props.handleUnfavoriteButton(props.itemKey)}>
+                    <MainButtonFavorite type="submit" className="favorite" onClick= {() => props.handleUnfavoriteButton(props.id)}>
                         Unfavorite
                     </MainButtonFavorite>
                 }
@@ -34,7 +34,7 @@ const LocationFav = (props) => {
                     <MainButtonEdit type="submit" onClick={handleEditButtonClickR}>Edit</MainButtonEdit>
                 }
                 {props.isLoggedIn &&
-                    <MainButtonDelete type="submit" onClick= {() => props.handleRightDelete(props.itemKey)}>Delete</MainButtonDelete>
+                    <MainButtonDelete type="submit" onClick= {() => props.handleRightDelete(props.id)}>Delete</MainButtonDelete>
                 }
                 </div>
             </ul>

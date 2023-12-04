@@ -34,6 +34,9 @@ const BathroomSchema = new mongoose.Schema({
         required: false,
         type: String,
         unique: false,
+    },
+    _id: {
+        type: String,
     }
 });
 

@@ -44,7 +44,7 @@ const App = () => {
 
   const DUMMY_LOCATION = [
     {
-     key: 'poopy',
+     id: 'poopy',
      title: 'MLC Third Floor',
       date: new Date('2023/2/12').toLocaleDateString(),
     img: 'https://thumbor.bigedition.com/funniest-cats-internet/IFuBq6cGzboq-79yUziXTZkYtw0=/0x13:800x614/480x360/filters:format(webp):quality(80)/granite-web-prod/cc/fa/ccfa37b8659442e9a994fe07d0534ac8.jpeg',
@@ -52,7 +52,7 @@ const App = () => {
      side: 'left',
     },
   {
-     key:'loopy',
+     id:'loopy',
       title: "Pharmacy First Floor",
       date: new Date('2023/6/8').toLocaleDateString(),
       img: 'https://pbs.twimg.com/profile_images/1370022873809645571/jo32MjlR_400x400.jpg',
@@ -60,7 +60,7 @@ const App = () => {
      side: 'right',
       },
       {
-      key:'jeesus',
+      id:'jeesus',
        title: 'Snelling Basement',
         date: new Date('2023/4/9').toLocaleDateString(),
         img: 'https://media.tenor.com/4ia58csaI_sAAAAM/cat-war.gif',
@@ -68,7 +68,7 @@ const App = () => {
      side: 'left'
       },
       {
-      key: 'hoopy',
+      id: 'hoopy',
       title: 'Science Library 2nd Floor',
       date: new Date('2023/11/30').toLocaleDateString(),
       img: kevin,

@@ -2,6 +2,7 @@ import React, { useState} from 'react';
 
 import './LocationForm.css'
 import LocationFormButton from './LocationFormButton';
+import axios from 'axios';
 
 const LocationForm = (props) => {
 
@@ -10,22 +11,27 @@ const LocationForm = (props) => {
   const [enteredImg, setEnteredImg] = useState(props.selectedLocation ? props.selectedLocation.img : '');
   const [enteredComment, setEnteredComment] = useState(props.selectedLocation ? props.selectedLocation.comment : '');
 
-  const handleFormSubmit = (event) => {
+  const handleFormSubmit = async (event) => {
     event.preventDefault();
+
     const locationData = {
       title: enteredTitle,
       date: enteredDate,
       img: enteredImg,
       comment: enteredComment,
     };
-    setEnteredTitle('');
-    setEnteredDate('');
-    setEnteredImg('');
-    setEnteredComment('');
-    props.onSubmit(locationData);
+    axios
+      .put(`//localhost:4000/api/bathrooms/${props.selectedLocation._id}`, locationData)
+      .then((res)=>{
 
-    props.onClose();
+          props.onSubmit(locationData);
+          props.onClose();
+      })
+          .catch((error) => {
+              console.error('Error adding location:', error);
+      });
   };
+
 
   const titleChangeHandler = (event) => {
     setEnteredTitle(event.target.value);

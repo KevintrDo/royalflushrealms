@@ -27,6 +27,7 @@ const FormAdd = ({onAddLocation}) => {
         newItem.preventDefault();
 
         const newLocation = {
+            _id: Math.random().toString(),            
             itemKey: Math.random().toString(),            
             title: formData.bathroomName,
             date: formData.date,
@@ -35,12 +36,9 @@ const FormAdd = ({onAddLocation}) => {
             side: 'left',
         };
 
-        console.log(newLocation);
-
         axios
             .post('//localhost:4000/api/bathrooms/', newLocation)
             .then((res)=>{
-                console.log('Location added:', newLocation);
                 onAddLocation(newLocation);
                 setFormData({
                     bathroomName: '',
