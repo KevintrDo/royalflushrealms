@@ -2,7 +2,7 @@ import { Link } from 'react-router-dom';
 import myImage from './img/Toilet logo picture.jpg'; // Adjust the path to your image
 import './MainHdrOut.css'; 
 import MainLocationList from './MainLocationList';
-
+import {useState, useEffect} from 'react';
 
 const MainHdrOut = ({locations}) => {
     
@@ -24,6 +24,7 @@ const MainHdrOut = ({locations}) => {
       <MainLocationList loggedIn={false} locations={locations}/>
     </div>
   );
+
 };
 
 export default MainHdrOut;

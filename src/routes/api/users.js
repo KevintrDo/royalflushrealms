@@ -71,6 +71,8 @@ userRouter.post("/tokenIsValid", async (req, res) => {
         if (!token) return res.json(false);
         const verified = jwt.verify(token, "passwordKey");
         if (!verified) return res.json(false);
+        const user = await User.findById(verified.id);
+        if (!user) return res.json(false);
         return res.json(true);
     } catch (err) {
         res.status(500).json({ error: err.message });

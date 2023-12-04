@@ -2,6 +2,7 @@ import React, {useState, useContext} from "react";
 import { useNavigate} from 'react-router-dom';
 import UserContext from '../../context/UserContext';
 import axios from 'axios';
+import {Alert} from "react-bootstrap"
 import { Link } from 'react-router-dom'
 
 import './Login.css';
@@ -32,7 +33,7 @@ const LoginCreate = () => {
             });
             localStorage.setItem("auth-token", loginRes.data.token);
             setLoading(false);
-            navigate('/');
+            navigate('/home');
         } catch (err) {
             setLoading(false);
             err.response.data.msg && setError(err.response.data.msg);
@@ -48,6 +49,7 @@ const LoginCreate = () => {
             </div>
             <div className="login-Container">
                 <div className='login'>
+                {error && <Alert variant="danger">{error}</Alert>}
                     <form onSubmit={handleSubmit}>
                         <label>Username</label>
                             <input
@@ -76,7 +78,8 @@ const LoginCreate = () => {
                                 required
                                 onChange={(e) => setConfirmPassword(e.target.value)}
                            />
-                        <Link to='/home'><button class="buttonEdit" type="submit">Create</button></Link>
+                        <button disabled={loading} class="buttonEdit" type="submit">Create</button>
+                        <Link to='/home'></Link>
                     </form>
                 </div>
             </div>

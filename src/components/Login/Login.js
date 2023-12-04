@@ -1,12 +1,18 @@
-import React, {useState, useContext} from "react";
+import React, {useState, useContext, useEffect} from "react";
 import axios from "axios";
+import {Alert} from "react-bootstrap";
 import UserContext from "../../context/UserContext"
 import { useNavigate} from "react-router-dom";
 import {Link} from 'react-router-dom';
+import LoginButton from '../Login/LoginButton';
+import { useHistory } from 'react-router-dom';
 
 import './Login.css';
 
 const Login = () => {
+
+
+
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
     const [error, setError] = useState();
@@ -15,6 +21,7 @@ const Login = () => {
     const { setUserData } = useContext(UserContext);
 
     async function handleSubmit(e) {
+        console.log("THIS IS WORKING");
         e.preventDefault();
         setLoading(true);
         try {
@@ -25,7 +32,7 @@ const Login = () => {
                 user: loginRes.data.user,
             });
             localStorage.setItem("auth-token", loginRes.data.token);
-            navigate('/');
+            navigate('/home');
         } catch(err) {
             setLoading(false);
             err.response.data.msg && setError(err.response.data.msg);
@@ -41,8 +48,8 @@ const Login = () => {
             </div>
             <div className="login-Container">
                 <div className='login'>
-      
-                    <form onSubmit={submitHandler}>
+                    {error && <Alert variant="danger">{error}</Alert>}
+                    <form onSubmit={handleSubmit}>
                         <label>Username/Email</label>
                         <input
                             id="email"
@@ -58,7 +65,8 @@ const Login = () => {
                             onChange={(e) => setPassword(e.target.value)}
 
                         />
-                        <Link to='/home'><button class="buttonEdit" type="submit" >Login</button></Link>
+                        <button disabled={loading} class="buttonEdit" type="submit" >login</button>
+                        <Link disabled={loading} to='/home'></Link>
                         <Link to='/signup'>Dont have an account? Sign up</Link>
                     </form>
                 </div>
