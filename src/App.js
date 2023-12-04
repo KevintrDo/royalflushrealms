@@ -39,7 +39,7 @@ const App = () => {
       });
     }
   };
-  //checkLoggedIn();
+  checkLoggedIn();
 }, []);
 
   const DUMMY_LOCATION = [
