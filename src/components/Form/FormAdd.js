@@ -52,6 +52,7 @@ const FormAdd = ({onAddLocation}) => {
                     console.error('Error adding location:', error);
             });
     }
+
     return (
         <div className='formhdr-background'>
         <div className="form-hdr">

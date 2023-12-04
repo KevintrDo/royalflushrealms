@@ -9,6 +9,7 @@ import axios from "axios";
 
 
 var MainLocationList = (props) => {
+    
     const [leftColumnItems, setLeftColumnItems] = useState([]);
     const [rightColumnItem, setRightColumnItem] = useState([]);
 
@@ -20,6 +21,7 @@ var MainLocationList = (props) => {
         setLeftColumnItems(leftItems);
         setRightColumnItem(rightItems);
     }, [props.locations]);
+    
 
 const handleFavoriteButton = async (itemID) => {
     const itemToMove = leftColumnItems.find((item) => item.id === itemID);
@@ -43,8 +45,6 @@ const handleFavoriteButton = async (itemID) => {
     const handleLeftDelete = (itemID) => {
         const itemToMove = leftColumnItems.find((item) => item.id === itemID);
         if (itemToMove) {
-            console.log(itemToMove._id);
-            console.log(itemToMove);
             axios.delete(`//localhost:4000/api/bathrooms/${itemToMove._id}`)
             .then((response) => {
                 console.log(response.data.msg); // Assuming your server returns a message
@@ -61,8 +61,6 @@ const handleFavoriteButton = async (itemID) => {
     const handleRightDelete = (itemID) => {
         const itemToMove = rightColumnItem.find((item) => item.id === itemID);
         if (itemToMove) {
-            console.log(itemToMove._id);
-            console.log(itemToMove);
             axios.delete(`//localhost:4000/api/bathrooms/${itemToMove._id}`)
             .then((response) => {
                 console.log(response.data.msg); // Assuming your server returns a message
@@ -83,9 +81,10 @@ const handleFavoriteButton = async (itemID) => {
             axios
             .put(`//localhost:4000/api/bathrooms/${itemToMove._id}`, updatedItem)
             .then((res)=>{
-                const updatedRightColumnItems = rightColumnItem.filter((item) => item.id !== itemID);
-                setLeftColumnItems([...leftColumnItems, itemToMove]);
-                setRightColumnItem(updatedRightColumnItems)
+                setRightColumnItem((prevRightColumnItems) =>
+                prevRightColumnItems.filter((item) => item.id !== itemID)
+                );
+                setLeftColumnItems((prevLeftColumnItems) => [...prevLeftColumnItems, itemToMove]);
             })
             .catch((error) => {
                 console.error('Error adding location:', error);

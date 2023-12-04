@@ -42,6 +42,8 @@ const App = () => {
   checkLoggedIn();
 }, []);
 
+
+{/*
   const DUMMY_LOCATION = [
     {
      id: 'poopy',
@@ -76,11 +78,12 @@ const App = () => {
       side: 'right',
      },
     ];
+  */}
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:4000/api/bathrooms/');
+        const response = await axios.get('http://localhost:4000/api/bathrooms');
         setLocationsList(response.data);
       } catch (error) {
         console.error('Error fetching data:', error);
@@ -90,7 +93,7 @@ const App = () => {
     fetchData();
   }, []);
 
-  const [locationsList, setLocationsList] = useState(DUMMY_LOCATION); // Your initial dummy locations
+  const [locationsList, setLocationsList] = useState([]); // Your initial dummy locations
 
   const addLocationHandler = (newLocation) => {
     setLocationsList((prevLocations) => [newLocation, ...prevLocations]);
@@ -107,7 +110,7 @@ const App = () => {
           <Route path='/signup' element={<LoginCreate/>} />
           <Route path='/add' element={<FormAdd onAddLocation={addLocationHandler}/>}/>
           <Route path='/home'element={<Hdr locations={locationsList}/>}/>
-          <Route path='/homeOut' element={<HdrOut locations={DUMMY_LOCATION}/>} />
+          <Route path='/homeOut' element={<HdrOut locations={locationsList}/>} />
         </Routes>
       </div>
     </Router>
