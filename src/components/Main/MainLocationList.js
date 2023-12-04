@@ -21,22 +21,24 @@ var MainLocationList = (props) => {
         setRightColumnItem(rightItems);
     }, [props.locations]);
 
-    const handleFavoriteButton = (itemID) => {
-        const itemToMove = leftColumnItems.find((item) => item.id === itemID);
-        if (itemToMove) {
-            const updatedItem = { ...itemToMove, side: 'right' };
-            axios
-            .put(`//localhost:4000/api/bathrooms/${itemToMove._id}`, updatedItem)
-            .then((res)=>{
-                const updatedLeftColumnItems = leftColumnItems.filter((item) => item.id !== itemID);
-                setLeftColumnItems(updatedLeftColumnItems);
-                setRightColumnItem([...rightColumnItem, itemToMove]);
-            })
-            .catch((error) => {
-                console.error('Error adding location:', error);
-            });            
+const handleFavoriteButton = async (itemID) => {
+    const itemToMove = leftColumnItems.find((item) => item.id === itemID);
+    
+    if (itemToMove) {
+        const updatedItem = { ...itemToMove, side: 'right' };
+
+        try {
+            await axios.put(`//localhost:4000/api/bathrooms/${itemToMove._id}`, updatedItem);
+
+            // Update the state only after the API call is successful
+            setLeftColumnItems((prevLeftColumnItems) => prevLeftColumnItems.filter((item) => item.id !== itemID));
+            setRightColumnItem((prevRightColumnItems) => [...prevRightColumnItems, updatedItem]);
+        } catch (error) {
+            console.error('Error adding location:', error);
         }
-    };
+    }
+};
+
 
     const handleLeftDelete = (itemID) => {
         const itemToMove = leftColumnItems.find((item) => item.id === itemID);
