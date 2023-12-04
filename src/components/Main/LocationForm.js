@@ -20,16 +20,15 @@ const LocationForm = (props) => {
       img: enteredImg,
       comment: enteredComment,
     };
-    axios
-      .put(`//localhost:4000/api/bathrooms/${props.selectedLocation._id}`, locationData)
-      .then((res)=>{
+    try {
+        await axios.put(`//localhost:4000/api/bathrooms/${props.selectedLocation._id}`, locationData);
 
-          props.onSubmit(locationData);
-          props.onClose();
-      })
-          .catch((error) => {
-              console.error('Error adding location:', error);
-      });
+        // Update the state only after the API call is successful
+        props.onSubmit(locationData);
+        props.onClose();
+    } catch (error) {
+        console.error('Error updating location:', error);
+    }
   };
 
 

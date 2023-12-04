@@ -4,7 +4,6 @@ import {Alert} from "react-bootstrap";
 import UserContext from "../../context/UserContext"
 import { useNavigate} from "react-router-dom";
 import {Link} from 'react-router-dom';
-import LoginButton from '../Login/LoginButton';
 import { useHistory } from 'react-router-dom';
 
 import './Login.css';
@@ -21,7 +20,6 @@ const Login = () => {
     const { setUserData } = useContext(UserContext);
 
     async function handleSubmit(e) {
-        console.log("THIS IS WORKING");
         e.preventDefault();
         setLoading(true);
         try {

@@ -24,48 +24,47 @@ var MainLocationList = (props) => {
     
 
 const handleFavoriteButton = async (itemID) => {
+
     const itemToMove = leftColumnItems.find((item) => item.id === itemID);
-    
-    if (itemToMove) {
-        const updatedItem = { ...itemToMove, side: 'right' };
-
-        try {
-            await axios.put(`//localhost:4000/api/bathrooms/${itemToMove._id}`, updatedItem);
-
-            // Update the state only after the API call is successful
-            setLeftColumnItems((prevLeftColumnItems) => prevLeftColumnItems.filter((item) => item.id !== itemID));
-            setRightColumnItem((prevRightColumnItems) => [...prevRightColumnItems, updatedItem]);
-        } catch (error) {
-            console.error('Error adding location:', error);
+        if (itemToMove) {
+            const update = { side: 'right' };
+            await axios.put(`//localhost:4000/api/bathrooms/${itemToMove._id}`, update)
+            .then((response) => {
+                const updatedLeftColumnItems = leftColumnItems.filter((item) => item._id !== itemToMove._id);
+                setLeftColumnItems(updatedLeftColumnItems);
+                setRightColumnItem([...rightColumnItem, itemToMove]);
+            })
+            .catch((error) => {
+                console.error('Error favoriting item:', error);
+            });
         }
     }
-};
 
 
     const handleLeftDelete = (itemID) => {
-        const itemToMove = leftColumnItems.find((item) => item.id === itemID);
-        if (itemToMove) {
-            axios.delete(`//localhost:4000/api/bathrooms/${itemToMove._id}`)
+    const itemToMove = leftColumnItems.find((item) => item.id === itemID);
+
+    if (itemToMove) {
+        axios.delete(`//localhost:4000/api/bathrooms/${itemToMove._id}`)
             .then((response) => {
-                console.log(response.data.msg); // Assuming your server returns a message
-                // Update the state to reflect the deletion
-                const updatedLeftColumnItems = leftColumnItems.filter((item) => item.id !== itemID);
+                const updatedLeftColumnItems = leftColumnItems.filter((item) => item._id !== itemToMove._id);
+                console.log('Updated Left Column Items:', updatedLeftColumnItems);
                 setLeftColumnItems(updatedLeftColumnItems);
             })
             .catch((error) => {
                 console.error('Error deleting item:', error);
             });
-        }
+    } else {
+        console.error('Item not found:', itemID);
     }
+};
 
     const handleRightDelete = (itemID) => {
         const itemToMove = rightColumnItem.find((item) => item.id === itemID);
         if (itemToMove) {
             axios.delete(`//localhost:4000/api/bathrooms/${itemToMove._id}`)
             .then((response) => {
-                console.log(response.data.msg); // Assuming your server returns a message
-                // Update the state to reflect the deletion
-                const updatedRightColumnItems = rightColumnItem.filter((item) => item.id !== itemID);
+                const updatedRightColumnItems = rightColumnItem.filter((item) => item._id !== itemToMove._id);
                 setRightColumnItem(updatedRightColumnItems);
             })
             .catch((error) => {
@@ -77,20 +76,20 @@ const handleFavoriteButton = async (itemID) => {
     const handleUnfavoriteButton = (itemID) => {
         const itemToMove = rightColumnItem.find((item) => item.id === itemID);
         if (itemToMove) {
-            const updatedItem = { ...itemToMove, side: 'left' };
-            axios
-            .put(`//localhost:4000/api/bathrooms/${itemToMove._id}`, updatedItem)
-            .then((res)=>{
-                setRightColumnItem((prevRightColumnItems) =>
-                prevRightColumnItems.filter((item) => item.id !== itemID)
-                );
-                setLeftColumnItems((prevLeftColumnItems) => [...prevLeftColumnItems, itemToMove]);
+            const update = { side: 'left' };
+            axios.put(`//localhost:4000/api/bathrooms/${itemToMove._id}`, update)
+            .then((response) => {
+                const updatedRightColumnItems = rightColumnItem.filter((item) => item._id !== itemToMove._id);
+                setLeftColumnItems([...leftColumnItems, itemToMove]);
+                setRightColumnItem(updatedRightColumnItems);
             })
             .catch((error) => {
-                console.error('Error adding location:', error);
-            });            
+                console.error('Error favoriting item:', error);
+            });
         }
-    };
+    }
+
+    
     
     const[selectedLocation, setSelectedLocation] = useState(null);
     const[showEditForm, setShowEditForm] = useState(false);
@@ -106,7 +105,7 @@ const handleFavoriteButton = async (itemID) => {
         console.log(locationData);
         setLeftColumnItems((prevLeftColumnItems) => {
             return prevLeftColumnItems.map((location) =>
-                location.id === selectedLocation.id ? { ...location, ...locationData } : location
+                location._id === selectedLocation._id ? { ...location, ...locationData } : location
             );
         });
     }
@@ -124,7 +123,7 @@ const handleFavoriteButton = async (itemID) => {
     const handleFormSubmitR = (locationData) => {
         setRightColumnItem((prevRightColumnItems) => {
             return prevRightColumnItems.map((location) =>
-                location.id === selectedLocation.id ? { ...location, ...locationData } : location
+                location._id === selectedLocation._id ? { ...location, ...locationData } : location
             );
         });
         
