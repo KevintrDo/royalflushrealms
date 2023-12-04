@@ -42,6 +42,8 @@ const App = () => {
   checkLoggedIn();
 }, []);
 
+
+{/*
   const DUMMY_LOCATION = [
     {
      id: 'poopy',
@@ -76,7 +78,22 @@ const App = () => {
       side: 'right',
      },
     ];
-  const [locationsList, setLocationsList] = useState(DUMMY_LOCATION); // Your initial dummy locations
+  */}
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get('http://localhost:4000/api/bathrooms');
+        setLocationsList(response.data);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  const [locationsList, setLocationsList] = useState([]); // Your initial dummy locations
 
   const addLocationHandler = (newLocation) => {
     setLocationsList((prevLocations) => [newLocation, ...prevLocations]);

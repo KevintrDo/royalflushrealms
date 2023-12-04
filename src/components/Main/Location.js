@@ -9,7 +9,7 @@ import MainButtonDelete from './MainButtonDelete';
 const Location = (props) => {
 
     const handleEditButtonClick = () => {
-        props.handleEditButton(props.id, props.title, props.date, props.img, props.comment);
+        props.handleEditButton(props);
       };
     
     return (

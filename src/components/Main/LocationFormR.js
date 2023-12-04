@@ -1,5 +1,5 @@
 import React, { useState} from 'react';
-
+import axios from 'axios';
 import './LocationForm.css'
 import LocationFormButton from './LocationFormButton';
 
@@ -12,19 +12,22 @@ const LocationFormR = (props) => {
 
   const handleFormSubmit = (event) => {
     event.preventDefault();
+
     const locationData = {
       title: enteredTitle,
       date: enteredDate,
       img: enteredImg,
       comment: enteredComment,
     };
-    setEnteredTitle('');
-    setEnteredDate('');
-    setEnteredImg('');
-    setEnteredComment('');
-    props.onSubmit(locationData);
-
-    props.onClose();
+    axios
+      .put(`//localhost:4000/api/bathrooms/${props.selectedLocation._id}`, locationData)
+      .then((res)=>{
+          props.onSubmit(locationData);
+          props.onClose();
+      })
+          .catch((error) => {
+              console.error('Error adding location:', error);
+      });
   };
 
   const titleChangeHandler = (event) => {

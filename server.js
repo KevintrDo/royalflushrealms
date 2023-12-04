@@ -6,10 +6,12 @@ const cors = require('cors');
 
 //Connect Database
 const users = require('./src/routes/api/users');
+const bathrooms = require('./src/routes/api/bathrooms');
 app.use(cors({origin: true, credentials: true}));
 app.use(express.json({extended: false}));
 // app.use(express.json());
 app.use('/api/users', users);
+app.use('/api/bathrooms', bathrooms);
 
 
 
@@ -17,7 +19,7 @@ app.use('/api/users', users);
 //     res.send('user $(req.params.id)')
 // })
 
-const conn_str ='mongodb+srv://danielgrigsby03:daniel123@cluster0.gwseuh2.mongodb.net/?retryWrites=true&w=majority'
+const conn_str ='mongodb+srv://kevindo03:1234@cluster0.mwtppin.mongodb.net/?retryWrites=true&w=majority'
 mongoose.set('strictQuery', false);
 mongoose.connect(conn_str)
 .then(() => {

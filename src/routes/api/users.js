@@ -4,6 +4,7 @@ const userRouter = express.Router();
 const jwt = require("jsonwebtoken");
 const auth = require("../../middleware/auth");
 const User = require('../../models/User');
+//const Bathroom = require('../../models/Bathroom');
 
 
 userRouter.post("/signup", async (req, res) => {
@@ -86,5 +87,19 @@ userRouter.get("/", auth, async (req, res) => {
         id: user._id,
     });
 });
+
+{/*
+userRouter.post('/add-item', async (req, res) => {
+  try {
+        const {itemKey, img, title, comment, date, side} = req.body;
+        const newBathroom = new Bathroom({itemKey, img, title, comment, date, side});
+        const savedBathroom = await newBathroom.save();
+        console.log(req.body);
+        res.json(savedBathroom);
+        } catch (error) {
+        console.error('Error adding item:', error);
+        res.status(500).json({ error: 'Internal Server Error' });
+        }
+});*/}
 
 module.exports = userRouter;

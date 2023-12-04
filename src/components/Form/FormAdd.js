@@ -1,8 +1,9 @@
 import React from "react";
-import {Link} from 'react-router-dom'
+import {Link, useNavigate} from 'react-router-dom'
 import { useState } from "react";
 import './FormAdd.css';
-import FormCard from "./FormCard";
+import FormCard from "./FormCard.js";
+import axios from 'axios';
 
 const FormAdd = ({onAddLocation}) => {
     const [formData, setFormData] = useState({
@@ -11,6 +12,8 @@ const FormAdd = ({onAddLocation}) => {
         comment:'',
         image:'',
     })
+    
+    const navigate = useNavigate();
 
     const inputHandler = (e) => {
         const { name, value } = e.target;
@@ -22,10 +25,10 @@ const FormAdd = ({onAddLocation}) => {
 
     const submitHandler = (newItem) => {
         newItem.preventDefault();
-        console.log('form submitted', formData);
 
         const newLocation = {
-            id: Math.random().toString(),
+            _id: Math.random().toString(),            
+            itemKey: Math.random().toString(),            
             title: formData.bathroomName,
             date: formData.date,
             comment: formData.comment,
@@ -33,15 +36,23 @@ const FormAdd = ({onAddLocation}) => {
             side: 'left',
         };
 
-        onAddLocation(newLocation);
-        
-        setFormData({
-            bathroomName: '',
-            date:'',
-            comment:'',
-            image: '',
-          });
+        axios
+            .post('//localhost:4000/api/bathrooms/', newLocation)
+            .then((res)=>{
+                onAddLocation(newLocation);
+                setFormData({
+                    bathroomName: '',
+                    date:'',
+                    comment:'',
+                    image: '',
+                })
+                navigate('/home');
+            })
+                .catch((error) => {
+                    console.error('Error adding location:', error);
+            });
     }
+
     return (
         <div className='formhdr-background'>
         <div className="form-hdr">
