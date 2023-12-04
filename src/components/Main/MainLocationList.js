@@ -21,34 +21,34 @@ var MainLocationList = (props) => {
     }, [props.locations]);
 
     const handleFavoriteButton = (itemID) => {
-        const itemToMove = leftColumnItems.find((item) => item.id === itemID);
+        const itemToMove = leftColumnItems.find((item) => item.itemKey === itemID);
         if (itemToMove) {
-            const updatedLeftColumnItems = leftColumnItems.filter((item) => item.id !== itemID);
+            const updatedLeftColumnItems = leftColumnItems.filter((item) => item.itemKey !== itemID);
             setLeftColumnItems(updatedLeftColumnItems);
             setRightColumnItem([...rightColumnItem, itemToMove]);
         }
     };
 
     const handleLeftDelete = (itemID) => {
-        const itemToMove = leftColumnItems.find((item) => item.id === itemID);
+        const itemToMove = leftColumnItems.find((item) => item.itemKey === itemID);
         if (itemToMove) {
-            const updatedLeftColumnItems = leftColumnItems.filter((item) => item.id !== itemID);
+            const updatedLeftColumnItems = leftColumnItems.filter((item) => item.itemKey !== itemID);
             setLeftColumnItems(updatedLeftColumnItems);
         }
     }
 
     const handleRightDelete = (itemID) => {
-        const itemToMove = rightColumnItem.find((item) => item.id === itemID);
+        const itemToMove = rightColumnItem.find((item) => item.itemKey === itemID);
         if (itemToMove) {
-            const updatedRightColumnItems = rightColumnItem.filter((item) => item.id !== itemID);
+            const updatedRightColumnItems = rightColumnItem.filter((item) => item.itemKey !== itemID);
             setRightColumnItem(updatedRightColumnItems);
         }
     }
 
     const handleUnfavoriteButton = (itemID) => {
-        const itemToMove = rightColumnItem.find((item) => item.id === itemID);
+        const itemToMove = rightColumnItem.find((item) => item.itemKey === itemID);
         if (itemToMove) {
-            const updatedRightColumnItems = rightColumnItem.filter((item) => item.id !== itemID);
+            const updatedRightColumnItems = rightColumnItem.filter((item) => item.itemKey !== itemID);
             setLeftColumnItems([...leftColumnItems, itemToMove]);
             setRightColumnItem(updatedRightColumnItems)
         }
@@ -67,7 +67,7 @@ var MainLocationList = (props) => {
     const handleFormSubmit = (locationData) => {
         setLeftColumnItems((prevLeftColumnItems) => {
             return prevLeftColumnItems.map((location) =>
-                location.id === selectedLocation.id ? { ...location, ...locationData } : location
+                location.itemKey === selectedLocation.itemKey ? { ...location, ...locationData } : location
             );
         });
     }
@@ -85,7 +85,7 @@ var MainLocationList = (props) => {
     const handleFormSubmitR = (locationData) => {
         setRightColumnItem((prevRightColumnItems) => {
             return prevRightColumnItems.map((location) =>
-                location.id === selectedLocation.id ? { ...location, ...locationData } : location
+                location.itemKey === selectedLocation.itemKey ? { ...location, ...locationData } : location
             );
         });
         
@@ -105,13 +105,13 @@ var MainLocationList = (props) => {
                 </div>
                 {leftColumnItems.map((location) => (
                     <Location
-                        key={location.id}
+                        key={location.itemKey}
                         img={location.img}
                         title={location.title}
                         date={location.date}
                         comment={location.comment}
-                        handleFavoriteButton={() => handleFavoriteButton(location.id)} // Pass the correct itemID
-                        handleLeftDelete={() => handleLeftDelete(location.id)}
+                        handleFavoriteButton={() => handleFavoriteButton(location.itemKey)} // Pass the correct itemID
+                        handleLeftDelete={() => handleLeftDelete(location.itemKey)}
                         isLoggedIn={props.loggedIn}
                         handleEditButton={() => handleEditButtonClick(location)}
                     />
@@ -123,13 +123,13 @@ var MainLocationList = (props) => {
                 </div>
                 {rightColumnItem.map((location) => (
                     <LocationFav
-                        key={location.id}
+                        key={location.itemKey}
                         img={location.img}
                         title={location.title}
                         date={location.date}
                         comment={location.comment}
-                        handleUnfavoriteButton={() => handleUnfavoriteButton(location.id)}
-                        handleRightDelete={() => handleRightDelete(location.id)}
+                        handleUnfavoriteButton={() => handleUnfavoriteButton(location.itemKey)}
+                        handleRightDelete={() => handleRightDelete(location.itemKey)}
                         isLoggedIn={props.loggedIn}
                         handleEditButton={() => handleEditButtonClickR(location)}
                     />
